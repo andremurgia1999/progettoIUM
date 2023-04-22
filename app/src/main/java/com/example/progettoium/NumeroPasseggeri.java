@@ -15,7 +15,6 @@ public class NumeroPasseggeri extends DialogFragment {
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         return new AlertDialog.Builder(requireContext())
-                .setMessage("Numero di passeggeri")
                 .setView(R.layout.numero_passeggeri)
                 .setPositiveButton("ok", (dialog, which) -> {
                     //se premo ok

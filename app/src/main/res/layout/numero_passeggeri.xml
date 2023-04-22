@@ -1,41 +1,232 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical"
-    android:padding="15dp" >
+    android:orientation = "vertical"
+    android:padding="15dp">
 
     <RelativeLayout
-        android:id="@+id/upperView"
+        android:id="@+id/NumeroPasseggeri"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/border"
         android:orientation="vertical"
-        android:padding="16dip" >
+        android:padding="5dp" >
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation = "vertical">
+
+            <TextView
+                android:id="@+id/titlePasseggeri"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:text="Numero passeggeri"
+                android:textSize="20dp"
+                android:textColor="@color/turchese" />
+
+            <TextView
+                android:id="@+id/textNumeroAdulti"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:text="0 adulti"
+                android:textSize="20dp"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/textNumeroBambini"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:text="0 bambini"
+                android:textSize="20dp"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/textNumeroNeonati"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:text="0 neonati"
+                android:textSize="20dp"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/Adulti"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:layout_marginTop="30dp">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textAdulti"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
             android:text="Adulti"
-            android:textSize="20dp"
+            android:textSize="17dp"
             android:textColor="@android:color/black" />
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/piuAdulti"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/numeroAdulti"
+            android:text="+"
+            android:textSize="25dp"
+            android:backgroundTint="@color/turchese"/>
+
+        <TextView
+            android:id="@+id/numeroAdulti"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:text="Button 1" />
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/menoAdulti"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:text="0"
+            android:textSize="23dp"
+            android:textColor="@android:color/black" />
 
         <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toLeftOf="@+id/button1"
-            android:text="Button 2" />
+            android:id="@+id/menoAdulti"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="10dp"
+            android:text="-"
+            android:textSize="25dp"
+            android:backgroundTint="@color/turchese"/>
+
     </RelativeLayout>
 
-</RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/Bambini"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:id="@+id/textBambini"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:text="Bambini"
+            android:textSize="17dp"
+            android:textColor="@android:color/black" />
+
+        <Button
+            android:id="@+id/piuBambini"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_toLeftOf="@+id/numeroBambini"
+            android:text="+"
+            android:textSize="25dp"
+            android:backgroundTint="@color/turchese"/>
+
+        <TextView
+            android:id="@+id/numeroBambini"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/menoBambini"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:text="0"
+            android:textSize="23dp"
+            android:textColor="@android:color/black" />
+
+        <Button
+            android:id="@+id/menoBambini"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="10dp"
+            android:text="-"
+            android:textSize="25dp"
+            android:backgroundTint="@color/turchese"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/Neonati"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:id="@+id/textNeonati"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:text="Neonati"
+            android:textSize="17dp"
+            android:textColor="@android:color/black" />
+
+        <Button
+            android:id="@+id/piuNeonati"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_toLeftOf="@+id/numeroNeonati"
+            android:text="+"
+            android:textSize="25dp"
+            android:backgroundTint="@color/turchese"/>
+
+        <TextView
+            android:id="@+id/numeroNeonati"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/menoNeonati"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:text="0"
+            android:textSize="23dp"
+            android:textColor="@android:color/black" />
+
+        <Button
+            android:id="@+id/menoNeonati"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="10dp"
+            android:text="-"
+            android:textSize="25dp"
+            android:backgroundTint="@color/turchese"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
