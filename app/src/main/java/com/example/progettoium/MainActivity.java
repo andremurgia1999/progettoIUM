@@ -15,7 +15,7 @@ import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextInputEditText dataPartenzaText, dataArrivoText;
+    TextInputEditText dataPartenzaText, dataArrivoText, passeggeriText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
         dataPartenzaText = findViewById(R.id.textInputEditTextDataPartenza);
         dataArrivoText = findViewById(R.id.textInputEditTextDataArrivo);
-
+        passeggeriText = findViewById(R.id.textInputEditTextNumeroPasseggeri);
         dataPartenzaText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View view, boolean hasFocus) {
@@ -46,6 +46,17 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        passeggeriText.setOnFocusChangeListener(new View.OnFocusChangeListener(){
+            @Override
+            public void onFocusChange(View view, boolean hasFocus) {
+                if (hasFocus) {
+                    passeggeriText.setRawInputType(InputType.TYPE_NULL); //per non fare uscire la tastiera
+                    new NumeroPasseggeri().show(
+                            getSupportFragmentManager(), NumeroPasseggeri.TAG);
+                }
+            }
+        });
     }
 
     public void doPositiveClick(Calendar date){
@@ -56,5 +67,9 @@ public class MainActivity extends AppCompatActivity {
     public void doPositiveClick2(Calendar date){
         SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
         dataArrivoText.setText(format.format(date.getTime()));
+    }
+
+    public void cambiaPasseggeri(){
+        passeggeriText.setText("Ciao");
     }
 }
