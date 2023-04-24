@@ -9,6 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
+import com.google.android.material.textfield.TextInputEditText;
+
 import java.util.Calendar;
 
 public class DatePickerFragment extends DialogFragment {
@@ -40,6 +42,9 @@ public class DatePickerFragment extends DialogFragment {
 
                     ((MainActivity)getActivity()).doPositiveClick(date);
                 } )
+                .setNegativeButton("annulla", (dialog, wich)-> {
+                    ((MainActivity)getActivity()).doNegativeClick();
+                })
                 .create();
     }
     public static String TAG = "DatePickerDialog";

@@ -39,7 +39,6 @@
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="5dp"
-                android:text="0 adulti"
                 android:textSize="20dp"
                 android:textColor="@color/black" />
 
@@ -50,7 +49,6 @@
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="5dp"
-                android:text="0 bambini"
                 android:textSize="20dp"
                 android:textColor="@color/black" />
 
@@ -61,7 +59,6 @@
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="5dp"
-                android:text="0 neonati"
                 android:textSize="20dp"
                 android:textColor="@color/black" />
 
@@ -106,7 +103,6 @@
             android:layout_toLeftOf="@id/menoAdulti"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
-            android:text="0"
             android:textSize="23dp"
             android:textColor="@android:color/black" />
 
@@ -160,7 +156,6 @@
             android:layout_toLeftOf="@id/menoBambini"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
-            android:text="0"
             android:textSize="23dp"
             android:textColor="@android:color/black" />
 
@@ -213,7 +208,6 @@
             android:layout_toLeftOf="@id/menoNeonati"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
-            android:text="0"
             android:textSize="23dp"
             android:textColor="@android:color/black" />
 

@@ -40,6 +40,9 @@ public class DatePickerFragment2 extends DialogFragment {
 
                     ((MainActivity)getActivity()).doPositiveClick2(date);
                 } )
+                .setNegativeButton("annulla", (dialog, wich)-> {
+                    ((MainActivity)getActivity()).doNegativeClick2();
+                })
                 .create();
     }
     public static String TAG = "DatePickerDialog2";
