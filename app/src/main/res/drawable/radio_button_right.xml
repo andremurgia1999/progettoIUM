@@ -4,7 +4,7 @@
 
     <!-- View background color -->
     <solid
-        android:color="@color/white" >
+        android:color="@color/white">
     </solid>
 
     <!-- View border color and width -->
@@ -15,7 +15,8 @@
 
     <!-- The radius makes the corners rounded -->
     <corners
-        android:radius="4dp"   >
+        android:topRightRadius="4dp"
+        android:bottomRightRadius="4dp">
     </corners>
 
 </shape>

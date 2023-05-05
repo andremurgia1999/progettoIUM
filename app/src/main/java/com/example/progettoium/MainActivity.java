@@ -6,54 +6,98 @@ import static com.google.android.material.internal.ContextUtils.getActivity;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.DialogFragment;
 
+import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.renderscript.ScriptGroup;
+import android.text.Editable;
 import android.text.InputType;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextInputEditText dataPartenzaText, dataArrivoText, passeggeriText;
+    TextInputLayout textInputLayoutPartenza, textInputLayoutArrivo, textInputLayoutDataPartenza, textInputLayoutDataArrivo, textInputLayoutPasseggeri;
+    TextInputEditText textInputEditTextPartenza, textInputEditTextArrivo, dataPartenzaText, dataArrivoText, passeggeriText;
     Button cercaVoli;
 
-
     Button piuAdulti, menoAdulti, piuBambini, menoBambini, piuNeonati, menoNeonati;
+
+    RadioButton soloAndata, andataRitorno;
 
     TextView numeroAdulti, numeroBambini, numeroNeonati, textNumeroAdulti, textNumeroBambini, textNumeroNeonati;
 
     int valoreAdulti=0, valoreBambini=0, valoreNeonati=0, valoreMinimo=0, valoreMassimo=20;
 
+    Long time1, time2;
+    Calendar date1 = Calendar.getInstance();
+    Calendar date2 = Calendar.getInstance();
 
+    DrawerLayout drawerLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        drawerLayout = findViewById(R.id.drawer_layout);
+
         dataPartenzaText = findViewById(R.id.textInputEditTextDataPartenza);
         dataArrivoText = findViewById(R.id.textInputEditTextDataArrivo);
         passeggeriText = findViewById(R.id.textInputEditTextNumeroPasseggeri);
 
-        cercaVoli = findViewById(R.id.ButtonCercaVoli);
         dataPartenzaText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View view, boolean hasFocus) {
                 if (hasFocus) {
                     dataPartenzaText.setRawInputType(InputType.TYPE_NULL); //per non fare uscire la tastiera
-                    new DatePickerFragment().show(
-                            getSupportFragmentManager(), DatePickerFragment.TAG);
+
+                    DatePicker datePicker = new DatePicker(MainActivity.this);
+                    AlertDialog.Builder datePickerDialog = new AlertDialog.Builder(MainActivity.this);
+
+                    datePicker.setMinDate(System.currentTimeMillis() - 1000);
+                    datePickerDialog.setView(datePicker);
+                    datePickerDialog.setMessage("Data di partenza");
+                    datePickerDialog.setPositiveButton("ok", (dialog, which) -> {
+                        //se premo ok
+                        date1.set(Calendar.YEAR, datePicker.getYear());
+                        date1.set(Calendar.MONTH, datePicker.getMonth());
+                        date1.set(Calendar.DAY_OF_MONTH, datePicker.getDayOfMonth());
+                        time1=date1.getTimeInMillis();
+                        doPositiveClick(date1);
+                    });
+                    datePickerDialog.setNegativeButton("annulla", (dialog, wich)-> {
+                        datePicker.setMinDate(System.currentTimeMillis() - 1000);
+                        doNegativeClick();
+                    });
+                    datePickerDialog.show();
                 }
                 dataPartenzaText.clearFocus();
             }
@@ -64,8 +108,26 @@ public class MainActivity extends AppCompatActivity {
             public void onFocusChange(View view, boolean hasFocus) {
                 if (hasFocus) {
                     dataArrivoText.setRawInputType(InputType.TYPE_NULL); //per non fare uscire la tastiera
-                    new DatePickerFragment2().show(
-                            getSupportFragmentManager(), DatePickerFragment2.TAG);
+
+                    DatePicker datePicker = new DatePicker(MainActivity.this);
+                    AlertDialog.Builder datePickerDialog = new AlertDialog.Builder(MainActivity.this);
+
+                    datePicker.setMinDate(date1.getTimeInMillis() + 86400000);
+                    datePickerDialog.setView(datePicker);
+                    datePickerDialog.setMessage("Data di partenza");
+                    datePickerDialog.setPositiveButton("ok", (dialog, which) -> {
+                        //se premo ok
+                        date2.set(Calendar.YEAR, datePicker.getYear());
+                        date2.set(Calendar.MONTH, datePicker.getMonth());
+                        date2.set(Calendar.DAY_OF_MONTH, datePicker.getDayOfMonth());
+                        time2=date2.getTimeInMillis();
+                        doPositiveClick2(date2);
+                    });
+                    datePickerDialog.setNegativeButton("annulla", (dialog, wich)-> {
+                        datePicker.setMinDate(System.currentTimeMillis() + 86400000);
+                        doNegativeClick2();
+                    });
+                    datePickerDialog.show();
                 }
                 dataArrivoText.clearFocus();
             }
@@ -149,13 +211,17 @@ public class MainActivity extends AppCompatActivity {
 
                     alert.setPositiveButton("ok", (dialog, which) -> {
                        passeggeriText.setText(valoreAdulti+" Adulti, "+valoreBambini+" Bambini, "+valoreNeonati+" Neonati");
+                       if(valoreAdulti==0 && valoreBambini==0 &&valoreNeonati==0){
+                           passeggeriText.setText(null);
+                           textInputLayoutPasseggeri.setError("Selezionare almeno un passeggero");
+                       }
+                       else {
+                           textInputLayoutPasseggeri.setErrorEnabled(false);
+                       }
                     });
 
                     alert.setNegativeButton("annulla", (dialog, which) -> {
                         passeggeriText.setText(null);
-                        valoreAdulti=0;
-                        valoreBambini=0;
-                        valoreNeonati=0;
                     });
 
                     alert.show();
@@ -163,26 +229,138 @@ public class MainActivity extends AppCompatActivity {
                 passeggeriText.clearFocus();
             }
         });
+
+        cercaVoli = findViewById(R.id.ButtonCercaVoli);
+        textInputEditTextPartenza = findViewById(R.id.textInputEditTextPartenza);
+        textInputEditTextArrivo = findViewById(R.id.textInputEditTextArrivo);
+        textInputLayoutPartenza = findViewById(R.id.textInputLayoutPartenza);
+        textInputLayoutArrivo = findViewById(R.id.textInputLayoutArrivo);
+        soloAndata = findViewById(R.id.soloAndata);
+        andataRitorno = findViewById(R.id.andataRitorno);
+        textInputLayoutDataPartenza = findViewById(R.id.textInputLayoutDataPartenza);
+        textInputLayoutDataArrivo = findViewById(R.id.textInputLayoutDataArrivo);
+        textInputLayoutPasseggeri = findViewById(R.id.textInputLayoutNumeroPasseggeri);
+
+        textInputEditTextPartenza.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if(charSequence.toString().length()==0){
+                    textInputLayoutPartenza.setError("Inserire aereoporto di partenza");
+                }
+            }
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if(charSequence.toString().length()!=0){
+                    textInputLayoutPartenza.setErrorEnabled(false);
+                }
+            }
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if(editable.toString().length()!=0){
+                    textInputLayoutPartenza.setErrorEnabled(false);
+                }
+                else{
+                    textInputLayoutPartenza.setError("Inserire aereoporto di partenza");
+                }
+            }
+        });
+
+        textInputEditTextArrivo.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if(charSequence.toString().length()==0){
+                    textInputLayoutArrivo.setError("Inserire aereoporto di arrivo");
+                }
+            }
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if(charSequence.toString().length()!=0){
+                    textInputLayoutArrivo.setErrorEnabled(false);
+                }
+            }
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if(editable.toString().length()!=0){
+                    textInputLayoutArrivo.setErrorEnabled(false);
+                }
+                else{
+                    textInputLayoutArrivo.setError("Inserire aereoporto di arrivo");
+                }
+            }
+        });
+
+        cercaVoli.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(textInputEditTextPartenza.getText().toString().length() == 0){
+                    textInputLayoutPartenza.setError("Inserire aereoporto di partenza");
+                }
+                if(textInputEditTextArrivo.getText().toString().length() == 0){
+                    textInputLayoutArrivo.setError("Inserire aereoporto di arrivo");
+                }
+                if(dataPartenzaText.getText().toString().length() == 0){
+                    textInputLayoutDataPartenza.setError("Inserire data di partenza");
+
+                }
+                if(dataArrivoText.getText().toString().length() == 0){
+                    textInputLayoutDataArrivo.setError("Inserire data di arrivo");
+                }
+                if(passeggeriText.getText().toString().length() == 0){
+                    textInputLayoutPasseggeri.setError("Selezionare almeno un passeggero");
+                }
+                if(time1>time2){
+                    textInputLayoutDataPartenza.setError("La data di partenza deve essere precedente rispetto all'arrivo");
+                    textInputLayoutDataArrivo.setError("La data di arrivo deve essere successiva rispetto alla partenza");
+                }
+            }
+        });
+    }
+
+    public void onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.soloAndata:
+                if (checked)
+                    dataArrivoText.setVisibility(View.GONE);
+                    textInputLayoutDataArrivo.setVisibility(View.GONE);
+                    LinearLayout.LayoutParams params = (LinearLayout.LayoutParams)textInputLayoutDataPartenza.getLayoutParams();
+                    params.setMarginEnd(65);
+                    textInputLayoutDataPartenza.setLayoutParams(params);
+                break;
+            case R.id.andataRitorno:
+                if (checked)
+                    dataArrivoText.setVisibility(View.VISIBLE);
+                    textInputLayoutDataArrivo.setVisibility(View.VISIBLE);
+                    LinearLayout.LayoutParams params2 = (LinearLayout.LayoutParams)textInputLayoutDataPartenza.getLayoutParams();
+                    params2.setMarginEnd(16);
+                    textInputLayoutDataPartenza.setLayoutParams(params2);
+                break;
+        }
     }
 
     public void doPositiveClick(Calendar date){
         SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
         dataPartenzaText.setText(format.format(date.getTime()));
+        textInputLayoutDataPartenza.setErrorEnabled(false);
     }
+
     public void doNegativeClick(){
+        textInputLayoutDataPartenza.setErrorEnabled(false);
         dataPartenzaText.setText(null);
-    }
-    public void doNegativeClick2(){
-        dataArrivoText.setText(null);
     }
 
     public void doPositiveClick2(Calendar date){
         SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
         dataArrivoText.setText(format.format(date.getTime()));
+        textInputLayoutDataArrivo.setErrorEnabled(false);
     }
 
-    public void cambiaPasseggeri(){
-        passeggeriText.setText("Ciao");
+    public void doNegativeClick2(){
+        textInputLayoutDataArrivo.setErrorEnabled(false);
+        dataArrivoText.setText(null);
     }
 
     protected void updateAdulti(int nuovoValore){
@@ -206,6 +384,57 @@ public class MainActivity extends AppCompatActivity {
         nuovoValore = nuovoValore<valoreMinimo ? valoreMinimo : nuovoValore;
         this.valoreNeonati = nuovoValore;
         numeroNeonati.setText(""+this.valoreNeonati);
-        textNumeroNeonati.setText(this.valoreAdulti+" neonati");
+        textNumeroNeonati.setText(this.valoreNeonati+" neonati");
+    }
+
+    public void ClickMenu(View view){
+        openDrawer(drawerLayout);
+    }
+
+    private void openDrawer(DrawerLayout drawerLayout) {
+        drawerLayout.openDrawer(GravityCompat.START);
+    }
+
+    private void closeDrawer(DrawerLayout drawerLayout){
+        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+    }
+
+    public void ClickMenu2(View view){
+        openDrawer2(drawerLayout);
+    }
+
+    private void openDrawer2(DrawerLayout drawerLayout) {
+        drawerLayout.openDrawer(GravityCompat.END);
+    }
+
+    private void closeDrawer2(DrawerLayout drawerLayout){
+        if(drawerLayout.isDrawerOpen(GravityCompat.END)){
+            drawerLayout.closeDrawer(GravityCompat.END);
+        }
+    }
+
+    public void ClickLogo(View view){
+        closeDrawer(drawerLayout);
+    }
+
+    public void ClickHome(View view){
+        closeDrawer(drawerLayout);
+    }
+
+    public void ClickLogin(View view){
+        closeDrawer2(drawerLayout);
+        redirectActivity(this, LoginActivity.class);
+    }
+
+    public void ClickRegistrati(View view){
+        closeDrawer2(drawerLayout);
+        redirectActivity(this, RegistrationActivity.class);
+    }
+
+    private void redirectActivity(Activity old_activity, Class new_activity) {
+        Intent intent = new Intent(old_activity, new_activity);
+        old_activity.startActivity(intent);
     }
 }

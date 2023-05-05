@@ -12,25 +12,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id ="@+id/menu"
-            android:src="@drawable/baseline_menu_24"
+            android:src="@drawable/baseline_arrow_back_24"
             android:layout_centerVertical="true"
-            android:onClick="ClickMenu"/>
+            android:onClick="ClickBack"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Home"
+            android:text="Registrazione"
             android:textSize="24dp"
             android:layout_marginStart="18dp"
             android:layout_toEndOf="@+id/menu"
             android:textColor="@color/white"
             android:layout_centerVertical="true"/>
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id ="@+id/personalArea"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/baseline_person_24"
-            android:onClick="ClickMenu2"/>
     </RelativeLayout>
 </RelativeLayout>

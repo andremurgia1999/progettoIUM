@@ -2,8 +2,8 @@
 
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation = "vertical"
     android:padding="15dp">
 
@@ -80,18 +80,31 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="10dp"
             android:text="Adulti"
             android:textSize="17dp"
             android:textColor="@android:color/black" />
 
+        <TextView
+            android:id="@+id/subTextAdulti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="60dp"
+            android:layout_toLeftOf="@+id/menoAdulti"
+            android:layout_toRightOf="@+id/textAdulti"
+            android:text="(+12 anni)"
+            android:textSize="16dp"
+            android:textColor="@color/turchese" />
+
         <Button
-            android:id="@+id/piuAdulti"
+            android:id="@+id/menoAdulti"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_centerVertical="true"
             android:layout_toLeftOf="@+id/numeroAdulti"
-            android:text="+"
+            android:text="-"
             android:textSize="25dp"
             android:backgroundTint="@color/turchese"/>
 
@@ -100,20 +113,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_toLeftOf="@id/menoAdulti"
+            android:layout_toLeftOf="@id/piuAdulti"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
             android:textSize="23dp"
             android:textColor="@android:color/black" />
 
         <Button
-            android:id="@+id/menoAdulti"
+            android:id="@+id/piuAdulti"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_marginEnd="10dp"
-            android:text="-"
+            android:text="+"
             android:textSize="25dp"
             android:backgroundTint="@color/turchese"/>
 
@@ -134,17 +147,30 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="10dp"
             android:text="Bambini"
             android:textSize="17dp"
             android:textColor="@android:color/black" />
 
+        <TextView
+            android:id="@+id/subTextBambini"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="77dp"
+            android:layout_toLeftOf="@+id/menoBambini"
+            android:layout_toRightOf="@+id/textBambini"
+            android:text="(2-12 anni)"
+            android:textSize="16dp"
+            android:textColor="@color/turchese" />
+
         <Button
-            android:id="@+id/piuBambini"
+            android:id="@+id/menoBambini"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_toLeftOf="@+id/numeroBambini"
-            android:text="+"
+            android:text="-"
             android:textSize="25dp"
             android:backgroundTint="@color/turchese"/>
 
@@ -153,19 +179,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_toLeftOf="@id/menoBambini"
+            android:layout_toLeftOf="@id/piuBambini"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
             android:textSize="23dp"
             android:textColor="@android:color/black" />
 
         <Button
-            android:id="@+id/menoBambini"
+            android:id="@+id/piuBambini"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignParentRight="true"
             android:layout_marginEnd="10dp"
-            android:text="-"
+            android:text="+"
             android:textSize="25dp"
             android:backgroundTint="@color/turchese"/>
 
@@ -186,17 +212,29 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="10dp"
             android:text="Neonati"
             android:textSize="17dp"
             android:textColor="@android:color/black" />
+        <TextView
+            android:id="@+id/subTextNeonati"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="75dp"
+            android:layout_toLeftOf="@+id/menoNeonati"
+            android:layout_toRightOf="@+id/textNeonati"
+            android:text="(-2 anni)"
+            android:textSize="16dp"
+            android:textColor="@color/turchese" />
 
         <Button
-            android:id="@+id/piuNeonati"
+            android:id="@+id/menoNeonati"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_toLeftOf="@+id/numeroNeonati"
-            android:text="+"
+            android:text="-"
             android:textSize="25dp"
             android:backgroundTint="@color/turchese"/>
 
@@ -205,19 +243,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_toLeftOf="@id/menoNeonati"
+            android:layout_toLeftOf="@id/piuNeonati"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
             android:textSize="23dp"
             android:textColor="@android:color/black" />
 
         <Button
-            android:id="@+id/menoNeonati"
+            android:id="@+id/piuNeonati"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignParentRight="true"
             android:layout_marginEnd="10dp"
-            android:text="-"
+            android:text="+"
             android:textSize="25dp"
             android:backgroundTint="@color/turchese"/>
 
