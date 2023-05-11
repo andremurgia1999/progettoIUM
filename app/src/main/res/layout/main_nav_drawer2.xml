@@ -9,15 +9,60 @@
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:layout_margin="16dp"
-        android:src="@drawable/baseline_account_circle_24"/>
+        android:src="@drawable/baseline_account_circle_24"
+        android:id="@+id/imgPersonalArea"/>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/userLogin"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_margin="16dp"
+            android:src="@drawable/baseline_account_circle_24"/>
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Utente: IUM2023"
+                android:gravity="center"
+                android:layout_marginTop="50dp"
+                android:textSize="20dp"
+                android:textColor="@color/turchese" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/LastLogin"
+                android:text="Ultimo login: 12/05/2023"
+                android:gravity="center"
+                android:textSize="14dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/border_grey"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="AREA PERSONALE"
         android:textSize="23dp"
+        android:layout_marginTop="10dp"
         android:textAlignment="center"
-        android:textColor="@color/turchese"/>
-
+        android:textColor="@color/turchese"
+        android:layout_marginBottom="40dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,7 +70,9 @@
         android:background="@color/border_grey"
         android:layout_marginStart="0dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginTop="40dp">
+        android:id="@+id/div1"
+        android:orientation="horizontal"
+        android:visibility="gone">
     </LinearLayout>
 
     <LinearLayout
@@ -33,7 +80,203 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_gravity="center_vertical"
-        android:onClick="ClickLogin">
+        android:id="@+id/IlMioAccount"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Il mio account"
+            android:textSize="18dp"
+            android:padding="15dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="50dp">
+        </TextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_account_box_24"
+            android:layout_marginEnd="20dp"
+            android:layout_gravity="center_vertical">
+        </ImageView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/border_grey"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="20dp"
+        android:id="@+id/div2"
+        android:orientation="horizontal"
+        android:visibility="gone">
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_vertical"
+        android:id="@+id/LeMiePrenotazioni"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Le mie prenotazioni"
+            android:textSize="18dp"
+            android:padding="15dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="50dp">
+        </TextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_view_list_24"
+            android:layout_marginEnd="20dp"
+            android:layout_gravity="center_vertical">
+        </ImageView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/border_grey"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="20dp"
+        android:id="@+id/div3"
+        android:orientation="horizontal"
+        android:visibility="gone">
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_vertical"
+        android:id="@+id/IMieiViaggi"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="I miei viaggi"
+            android:textSize="18dp"
+            android:padding="15dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="50dp">
+        </TextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_local_airport_242"
+            android:layout_marginEnd="20dp"
+            android:layout_gravity="center_vertical">
+        </ImageView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/border_grey"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="20dp"
+        android:id="@+id/div4"
+        android:orientation="horizontal"
+        android:visibility="gone">
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_vertical"
+        android:id="@+id/Modifica"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Modifica dati personali"
+            android:textSize="18dp"
+            android:padding="15dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="50dp">
+        </TextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_edit_24"
+            android:layout_marginEnd="20dp"
+            android:layout_gravity="center_vertical">
+        </ImageView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/border_grey"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="20dp"
+        android:id="@+id/div5"
+        android:orientation="horizontal"
+        android:visibility="gone">
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_vertical"
+        android:id="@+id/Logout"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Logout"
+            android:textSize="18dp"
+            android:padding="15dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="50dp">
+        </TextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_logout_24"
+            android:layout_marginEnd="20dp"
+            android:layout_gravity="center_vertical">
+        </ImageView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/border_grey"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="20dp"
+
+        android:id="@+id/div6"
+        android:orientation="horizontal">
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_vertical"
+        android:onClick="ClickLogin"
+        android:id="@+id/Login">
 
         <TextView
             android:layout_width="0dp"
@@ -60,7 +303,9 @@
         android:layout_height="1dp"
         android:background="@color/border_grey"
         android:layout_marginStart="0dp"
-        android:layout_marginEnd="20dp">
+        android:layout_marginEnd="20dp"
+        android:id="@+id/div7"
+        android:orientation="horizontal">
     </LinearLayout>
 
     <LinearLayout
@@ -68,7 +313,8 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_gravity="center_vertical"
-        android:onClick="ClickRegistrati">
+        android:onClick="ClickRegistrati"
+        android:id="@+id/Registrati">
 
         <TextView
             android:layout_width="0dp"
@@ -95,7 +341,9 @@
         android:layout_height="1dp"
         android:background="@color/border_grey"
         android:layout_marginStart="0dp"
-        android:layout_marginEnd="20dp">
+        android:layout_marginEnd="20dp"
+        android:id="@+id/div8"
+        android:orientation="horizontal">
     </LinearLayout>
 
 </LinearLayout>

@@ -154,6 +154,7 @@
             android:maxLines="1"
             android:layout_marginTop="12dp"
             android:hint="Numero di telefono"
+            app:prefixText="+39 "
             app:boxStrokeErrorColor="@color/red"
             app:errorTextColor="@color/red"
             app:errorIconTint="@color/red"
@@ -207,7 +208,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:id="@+id/textInputLayoutUsername"
+            android:id="@+id/textInputLayoutUsernameReg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -227,7 +228,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/textInputEditTextUsername"
+                android:id="@+id/textInputEditTextUsernameReg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
@@ -238,7 +239,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:id="@+id/textInputLayoutPassword"
+            android:id="@+id/textInputLayoutPasswordReg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -258,7 +259,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/textInputEditTextPassword"
+                android:id="@+id/textInputEditTextPasswordReg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
@@ -306,7 +307,7 @@
             android:layout_marginTop="12dp"
             android:text="Registrati"
             android:gravity="center"
-            android:id="@+id/ButtonLogin"
+            android:id="@+id/ButtonRegistrati"
             android:backgroundTint="@color/turchese"
             android:layout_marginBottom="10dp"/>
 

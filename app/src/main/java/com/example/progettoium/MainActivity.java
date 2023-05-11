@@ -13,6 +13,7 @@ import androidx.fragment.app.DialogFragment;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.ColorStateList;
@@ -33,6 +34,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -62,6 +64,13 @@ public class MainActivity extends AppCompatActivity {
     Calendar date2 = Calendar.getInstance();
 
     DrawerLayout drawerLayout;
+
+    static ImageView imgPersonalArea;
+
+    static LinearLayout Login, Registrati, IlMioAccount, LeMiePrenotazioni, IMieiViaggi, Modifica, Logout,
+            div1, div2, div3, div4, div5, div6, div7, div8, userLogin;
+    static TextView LastLogin;
+;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -314,6 +323,27 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        Registrati = findViewById(R.id.Registrati);
+        Login = findViewById(R.id.Login);
+        IlMioAccount = findViewById(R.id.IlMioAccount);
+        LeMiePrenotazioni = findViewById(R.id.LeMiePrenotazioni);
+        IMieiViaggi = findViewById(R.id.IMieiViaggi);
+        Modifica = findViewById(R.id.Modifica);
+        Logout = findViewById(R.id.Logout);
+
+        div1= findViewById(R.id.div1);
+        div2= findViewById(R.id.div2);
+        div3= findViewById(R.id.div3);
+        div4= findViewById(R.id.div4);
+        div5= findViewById(R.id.div5);
+        div6= findViewById(R.id.div6);
+        div7= findViewById(R.id.div7);
+        div8= findViewById(R.id.div8);
+
+        imgPersonalArea = findViewById(R.id.imgPersonalArea);
+        userLogin = findViewById(R.id.userLogin);
+        LastLogin = findViewById(R.id.LastLogin);
     }
 
     public void onRadioButtonClicked(View view) {
@@ -436,5 +466,29 @@ public class MainActivity extends AppCompatActivity {
     private void redirectActivity(Activity old_activity, Class new_activity) {
         Intent intent = new Intent(old_activity, new_activity);
         old_activity.startActivity(intent);
+    }
+
+    public static void isLogged(Context context){
+        Toast.makeText(context, "Login effettuato, Benvenuto IUM2023", Toast.LENGTH_LONG).show();
+        Login.setVisibility(View.GONE);
+        Registrati.setVisibility(View.GONE);
+        IlMioAccount.setVisibility(View.VISIBLE);
+        LeMiePrenotazioni.setVisibility(View.VISIBLE);
+        IMieiViaggi.setVisibility(View.VISIBLE);
+        Modifica.setVisibility(View.VISIBLE);
+        Logout.setVisibility(View.VISIBLE);
+
+        //per bordi
+        div1.setVisibility(View.VISIBLE);
+        div2.setVisibility(View.VISIBLE);
+        div3.setVisibility(View.VISIBLE);
+        div4.setVisibility(View.VISIBLE);
+        div5.setVisibility(View.VISIBLE);
+        div6.setVisibility(View.VISIBLE);
+        div7.setVisibility(View.GONE);
+        div8.setVisibility(View.GONE);
+
+        imgPersonalArea.setVisibility(View.GONE);
+        userLogin.setVisibility(View.VISIBLE);
     }
 }

@@ -117,7 +117,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/baseline_local_airport_242"
+            android:src="@drawable/baseline_airlines_24"
             android:layout_marginEnd="20dp"
             android:layout_gravity="center_vertical">
         </ImageView>
