@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -26,13 +27,11 @@ public class RegistrationActivity extends AppCompatActivity {
                     textInputLayoutEmail, textInputLayoutUsernameReg, textInputLayoutPasswordReg, textInputLayoutPasswordRepeat;
 
     TextInputEditText textInputEditTextNome, textInputEditTextCognome, textInputEditTextData, textInputEditTextCF, textInputEditTextCellulare,
-                      textInputEditTextEmail, textInputEditTextUsernameReg, textInputEditTextPasswordReg, getTextInputEditTextPasswordRepeat;
+                      textInputEditTextEmail, textInputEditTextUsernameReg, textInputEditTextPasswordReg, textInputEditTextPasswordRepeat;
 
     Button buttonRegistrati;
 
     Calendar date = Calendar.getInstance();
-
-    static int errors = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +56,7 @@ public class RegistrationActivity extends AppCompatActivity {
         textInputEditTextEmail = findViewById(R.id.textInputEditTextEmail);
         textInputEditTextUsernameReg = findViewById(R.id.textInputEditTextUsernameReg);
         textInputEditTextPasswordReg = findViewById(R.id.textInputEditTextPasswordReg);
-        getTextInputEditTextPasswordRepeat = findViewById(R.id.textInputEditTextPasswordRepeat);
+        textInputEditTextPasswordRepeat = findViewById(R.id.textInputEditTextPasswordRepeat);
 
         buttonRegistrati = findViewById(R.id.ButtonRegistrati);
 
@@ -66,33 +65,28 @@ public class RegistrationActivity extends AppCompatActivity {
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if(charSequence.toString().length()==0){
                     textInputLayoutNome.setError("Inserire nome");
-                    errors++;
                 }
                 else {
                     textInputLayoutNome.setErrorEnabled(false);
-                    errors--;
+                    buttonRegistrati.setEnabled(true);
                 }
             }
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if(charSequence.toString().length()==0){
                     textInputLayoutNome.setError("Inserire nome");
-                    errors++;
                 }
                 else {
                     textInputLayoutNome.setErrorEnabled(false);
-                    errors--;
                 }
             }
             @Override
             public void afterTextChanged(Editable editable) {
                 if(editable.toString().length()==0){
                     textInputLayoutNome.setError("Inserire nome");
-                    errors++;
                 }
                 else {
                     textInputLayoutNome.setErrorEnabled(false);
-                    errors--;
                 }
             }
         });
@@ -396,7 +390,7 @@ public class RegistrationActivity extends AppCompatActivity {
             }
         });
 
-        getTextInputEditTextPasswordRepeat.addTextChangedListener(new TextWatcher() {
+        textInputEditTextPasswordRepeat.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if(charSequence.toString().length()==0){
@@ -447,14 +441,79 @@ public class RegistrationActivity extends AppCompatActivity {
         buttonRegistrati.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(errors!=0){
-                    buttonRegistrati.setEnabled(false);
-                }
-                else{
-                    buttonRegistrati.setEnabled(true);
+                if (checkInput()) {
+                    finish();
+                    Toast.makeText(getApplicationContext(), "Registrazione effettuata, " + textInputEditTextUsernameReg.getText().toString(), Toast.LENGTH_LONG).show();
                 }
             }
         });
+    }
+
+    public boolean checkInput(){
+        int errors = 0;
+        if(textInputEditTextNome.getText().toString().length()==0){
+            textInputLayoutNome.setError("Inserire nome");
+            errors++;
+        }
+        if(textInputEditTextCognome.getText().toString().length()==0){
+            textInputLayoutCognome.setError("Inserire cognome");
+            errors++;
+        }
+        if(textInputEditTextData.getText().toString().length() == 0){
+            textInputLayoutData.setError("Inserire data di nascita");
+            errors++;
+        }
+        if(textInputEditTextCF.getText().toString().length() == 0){
+            textInputLayoutCF.setError("Inserire codice fiscale");
+            errors++;
+        }
+        if(!isValidCF(textInputEditTextCF.getText().toString())){
+            textInputLayoutCF.setError("Codice fiscale non valido");
+            errors++;
+        }
+        if(textInputEditTextCellulare.getText().toString().length() == 0){
+            textInputLayoutCellulare.setError("Inserire numero di telefono");
+            errors++;
+        }
+        if(!isValidCell(textInputEditTextCellulare.getText().toString())){
+            textInputLayoutCellulare.setError("Numero di telefono non valido");
+            errors++;
+        }
+        if(textInputEditTextEmail.getText().toString().length() == 0){
+            textInputLayoutEmail.setError("Inserire email");
+            errors++;
+        }
+        if(!isValidEmail(textInputEditTextEmail.getText().toString())){
+            textInputLayoutEmail.setError("Email non valida");
+            errors++;
+        }
+        if(textInputEditTextUsernameReg.getText().toString().length() == 0){
+            textInputLayoutUsernameReg.setError("Inserire username");
+            errors++;
+        }
+        if(textInputEditTextUsernameReg.getText().toString().length() < 3){
+            textInputLayoutUsernameReg.setError("Username non valido");
+            errors++;
+        }
+        if(textInputEditTextPasswordReg.getText().toString().length() == 0){
+            textInputLayoutPasswordReg.setError("Inserire password");
+            errors++;
+        }
+        if(!isValidPassword(textInputEditTextPasswordReg.getText().toString())){
+            textInputLayoutPasswordReg.setError("La password deve contenere:\n-Almeno 5 caratteri\n" +
+                    "-Almeno 1 lettera maiuscola\n-Almeno 1 lettera minuscola\n-Almeno un carattere speciale (@#$%^.,:&+=)");
+            errors++;
+        }
+        if(textInputEditTextPasswordRepeat.getText().toString().length() == 0){
+            textInputLayoutPasswordRepeat.setError("Reinserire password");
+            errors++;
+        }
+        if(textInputEditTextPasswordRepeat.getText().toString().compareTo(textInputEditTextPasswordReg.getText().toString()) != 0){
+            textInputLayoutPasswordRepeat.setError("Le due password non corrispondono");
+            errors++;
+        }
+
+        return errors == 0;
     }
 
     public void doPositiveClick(Calendar date){

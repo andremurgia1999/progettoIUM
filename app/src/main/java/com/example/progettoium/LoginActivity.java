@@ -44,20 +44,26 @@ public class LoginActivity extends AppCompatActivity {
                 if(charSequence.toString().length()==0){
                     textInputLayoutUsername.setError("Inserire username");
                 }
+                else{
+                    textInputLayoutUsername.setErrorEnabled(false);
+                }
             }
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if(charSequence.toString().length()!=0){
+                if(charSequence.toString().length()==0){
+                    textInputLayoutUsername.setError("Inserire username");
+                }
+                else{
                     textInputLayoutUsername.setErrorEnabled(false);
                 }
             }
             @Override
             public void afterTextChanged(Editable editable) {
-                if(editable.toString().length()!=0){
-                    textInputLayoutUsername.setErrorEnabled(false);
+                if(editable.toString().length()==0){
+                    textInputLayoutUsername.setError("Inserire username");
                 }
                 else{
-                    textInputLayoutUsername.setError("Inserire username");
+                    textInputLayoutUsername.setErrorEnabled(false);
                 }
             }
         });
@@ -68,20 +74,26 @@ public class LoginActivity extends AppCompatActivity {
                 if(charSequence.toString().length()==0){
                     textInputLayoutPassword.setError("Inserire password");
                 }
+                else{
+                    textInputLayoutPassword.setErrorEnabled(false);
+                }
             }
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if(charSequence.toString().length()!=0){
+                if(charSequence.toString().length()==0){
+                    textInputLayoutPassword.setError("Inserire password");
+                }
+                else{
                     textInputLayoutPassword.setErrorEnabled(false);
                 }
             }
             @Override
             public void afterTextChanged(Editable editable) {
-                if(editable.toString().length()!=0){
-                    textInputLayoutPassword.setErrorEnabled(false);
+                if(editable.toString().length()==0){
+                    textInputLayoutPassword.setError("Inserire password");
                 }
                 else{
-                    textInputLayoutPassword.setError("Inserire username");
+                    textInputLayoutPassword.setErrorEnabled(false);
                 }
             }
         });
@@ -89,23 +101,32 @@ public class LoginActivity extends AppCompatActivity {
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(textInputEditTextUsername.getText().toString().length() == 0) {
-                    textInputLayoutUsername.setError("Inserire username");
-                }
-                if(textInputEditTextPassword.getText().toString().length() == 0){
-                    textInputLayoutPassword.setError("Inserire password");
-                }
-                if(textInputEditTextUsername.getText().toString().compareTo("IUM2023") != 0
-                || textInputEditTextPassword.getText().toString().compareTo("#Ium2023") != 0 ){
-                    errorLogin.setVisibility(View.VISIBLE);
-                }
-                else {
-                    errorLogin.setVisibility(View.GONE);
-                    finish();
-                    MainActivity.isLogged(getApplicationContext());
+                if(checkInput()) {
+                    if (textInputEditTextUsername.getText().toString().compareTo("IUM2023") != 0
+                     || textInputEditTextPassword.getText().toString().compareTo("#Ium2023") != 0) {
+                        errorLogin.setVisibility(View.VISIBLE);
+                    }else {
+                        errorLogin.setVisibility(View.GONE);
+                        finish();
+                        MainActivity.isLogged(getApplicationContext());
+                    }
                 }
             }
         });
+    }
+
+    public boolean checkInput(){
+        int errors = 0;
+
+        if(textInputEditTextUsername.getText().toString().length() == 0) {
+            textInputLayoutUsername.setError("Inserire username");
+            errors++;
+        }
+        if(textInputEditTextPassword.getText().toString().length() == 0){
+            textInputLayoutPassword.setError("Inserire password");
+            errors++;
+        }
+        return errors == 0;
     }
 
     public void ClickBack(View view){

@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
     int valoreAdulti=0, valoreBambini=0, valoreNeonati=0, valoreMinimo=0, valoreMassimo=20;
 
-    Long time1, time2;
+    long time1=0, time2=0;
     Calendar date1 = Calendar.getInstance();
     Calendar date2 = Calendar.getInstance();
 
@@ -69,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
 
     static LinearLayout Login, Registrati, IlMioAccount, LeMiePrenotazioni, IMieiViaggi, Modifica, Logout,
             div1, div2, div3, div4, div5, div6, div7, div8, userLogin;
-    static TextView LastLogin;
 ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -301,26 +300,7 @@ public class MainActivity extends AppCompatActivity {
         cercaVoli.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(textInputEditTextPartenza.getText().toString().length() == 0){
-                    textInputLayoutPartenza.setError("Inserire aereoporto di partenza");
-                }
-                if(textInputEditTextArrivo.getText().toString().length() == 0){
-                    textInputLayoutArrivo.setError("Inserire aereoporto di arrivo");
-                }
-                if(dataPartenzaText.getText().toString().length() == 0){
-                    textInputLayoutDataPartenza.setError("Inserire data di partenza");
-
-                }
-                if(dataArrivoText.getText().toString().length() == 0){
-                    textInputLayoutDataArrivo.setError("Inserire data di arrivo");
-                }
-                if(passeggeriText.getText().toString().length() == 0){
-                    textInputLayoutPasseggeri.setError("Selezionare almeno un passeggero");
-                }
-                if(time1>time2){
-                    textInputLayoutDataPartenza.setError("La data di partenza deve essere precedente rispetto all'arrivo");
-                    textInputLayoutDataArrivo.setError("La data di arrivo deve essere successiva rispetto alla partenza");
-                }
+                checkInput();
             }
         });
 
@@ -343,9 +323,40 @@ public class MainActivity extends AppCompatActivity {
 
         imgPersonalArea = findViewById(R.id.imgPersonalArea);
         userLogin = findViewById(R.id.userLogin);
-        LastLogin = findViewById(R.id.LastLogin);
     }
 
+    public boolean checkInput(){
+        int errors = 0;
+
+        if(textInputEditTextPartenza.getText().toString().length() == 0){
+            textInputLayoutPartenza.setError("Inserire aereoporto di partenza");
+            errors++;
+        }
+        if(textInputEditTextArrivo.getText().toString().length() == 0){
+            textInputLayoutArrivo.setError("Inserire aereoporto di arrivo");
+            errors++;
+        }
+        if(dataPartenzaText.getText().toString().length() == 0){
+            textInputLayoutDataPartenza.setError("Inserire data di partenza");
+            errors++;
+        }
+        if(dataArrivoText.getText().toString().length() == 0){
+            textInputLayoutDataArrivo.setError("Inserire data di arrivo");
+            errors++;
+        }
+        if(passeggeriText.getText().toString().length() == 0){
+            textInputLayoutPasseggeri.setError("Selezionare almeno un passeggero");
+            errors++;
+        }
+        if(time1!=0 && time2 !=0) {
+            if (time1 > time2) {
+                textInputLayoutDataPartenza.setError("La data di partenza deve essere precedente rispetto all'arrivo");
+                textInputLayoutDataArrivo.setError("La data di arrivo deve essere successiva rispetto alla partenza");
+                errors++;
+            }
+        }
+        return errors == 0;
+    }
     public void onRadioButtonClicked(View view) {
         // Is the button now checked?
         boolean checked = ((RadioButton) view).isChecked();
