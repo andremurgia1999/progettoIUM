@@ -464,6 +464,16 @@ public class MainActivity extends AppCompatActivity {
         closeDrawer(drawerLayout);
     }
 
+    public void ClickReviews(View view){
+        closeDrawer(drawerLayout);
+        redirectActivity(this, ReviewsActivity.class);
+    }
+
+    public void ClickCompanies(View view){
+        closeDrawer(drawerLayout);
+        redirectActivity(this, CompaniesActivity.class);
+    }
+
     public void ClickLogin(View view){
         closeDrawer2(drawerLayout);
         redirectActivity(this, LoginActivity.class);

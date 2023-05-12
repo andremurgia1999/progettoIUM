@@ -3,6 +3,9 @@ package com.example.progettoium;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.InputType;
@@ -442,8 +445,22 @@ public class RegistrationActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (checkInput()) {
-                    finish();
-                    Toast.makeText(getApplicationContext(), "Registrazione effettuata, " + textInputEditTextUsernameReg.getText().toString(), Toast.LENGTH_LONG).show();
+                    AlertDialog.Builder dialog = new AlertDialog.Builder(RegistrationActivity.this);
+                    dialog.setTitle("Registrazione effettauta!");
+                    dialog.setMessage("Caro " + textInputEditTextUsernameReg.getText().toString() + "il tuo account è stato creato.\nPuoi accedere al tuo profilo inserendo" +
+                                    " username e password scelte nella fase di registrazione");
+                    dialog.setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            finish();
+                        }
+                    });
+                    dialog.setNeutralButton("Vai a login", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            redirectActivity(RegistrationActivity.this, LoginActivity.class);
+                        }
+                    });
+                    dialog.show();
                 }
             }
         });
@@ -566,6 +583,11 @@ public class RegistrationActivity extends AppCompatActivity {
         matcher = pattern.matcher(password);
 
         return matcher.matches();
+    }
+
+    private void redirectActivity(Activity old_activity, Class new_activity) {
+        Intent intent = new Intent(old_activity, new_activity);
+        old_activity.startActivity(intent);
     }
 
 }
