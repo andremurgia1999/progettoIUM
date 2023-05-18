@@ -9,14 +9,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class ReviewsActivity extends AppCompatActivity {
+public class NoiActivity extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reviews);
+        setContentView(R.layout.activity_noi);
 
         drawerLayout = findViewById(R.id.drawer_layout);
     }
@@ -44,18 +44,18 @@ public class ReviewsActivity extends AppCompatActivity {
         redirectActivity(this, MainActivity.class);
     }
 
+    public void ClickChiSiamo(View view){
+        closeDrawer(drawerLayout);
+    }
+
     public void ClickReviews(View view){
         closeDrawer(drawerLayout);
+        redirectActivity(this, CompaniesActivity.class);
     }
 
     public void ClickCompanies(View view){
         closeDrawer(drawerLayout);
         redirectActivity(this, CompaniesActivity.class);
-    }
-
-    public void ClickChiSiamo(View view){
-        closeDrawer(drawerLayout);
-        redirectActivity(this, NoiActivity.class);
     }
 
     public void ClickContatti(View view){

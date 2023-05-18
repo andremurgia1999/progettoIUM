@@ -6,19 +6,33 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 
-public class ReviewsActivity extends AppCompatActivity {
+public class ContattiActivity extends AppCompatActivity {
+
+    ImageView contattaci;
 
     DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reviews);
+        setContentView(R.layout.activity_contatti);
 
         drawerLayout = findViewById(R.id.drawer_layout);
+        contattaci = findViewById(R.id.contattaci);
+
+        contattaci.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String phone = "3881745648";
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null));
+                startActivity(intent);
+            }
+        });
     }
 
     private void openDrawer(DrawerLayout drawerLayout) {
@@ -46,6 +60,7 @@ public class ReviewsActivity extends AppCompatActivity {
 
     public void ClickReviews(View view){
         closeDrawer(drawerLayout);
+        redirectActivity(this, ReviewsActivity.class);
     }
 
     public void ClickCompanies(View view){
@@ -60,7 +75,6 @@ public class ReviewsActivity extends AppCompatActivity {
 
     public void ClickContatti(View view){
         closeDrawer(drawerLayout);
-        redirectActivity(this, ContattiActivity.class);
     }
 
     private void redirectActivity(Activity old_activity, Class new_activity) {

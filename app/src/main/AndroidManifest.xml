@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,6 +13,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProgettoIUM"
         tools:targetApi="31">
+        <activity
+            android:name=".RisultatiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ModificaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ContattiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NoiActivity"
+            android:exported="false" />
         <activity
             android:name=".CompaniesActivity"
             android:exported="false" />

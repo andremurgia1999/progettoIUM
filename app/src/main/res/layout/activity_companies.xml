@@ -36,8 +36,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Per voi vogliamo il meglio! \nEcco perchè collaboriamo con le migliori compagnie."
-                android:layout_gravity="center"
+                android:text="Per voi vogliamo il meglio! \nEcco perchè collaboriamo con le migliori compagnie."         android:layout_gravity="center"
                 android:textAlignment="center"
                 android:textColor="@color/border_grey"
                 android:layout_marginTop="7dp"
@@ -58,7 +57,9 @@
                     android:layout_marginTop="40dp"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="20dp"
-                    android:id="@+id/volotea">
+                    android:id="@+id/volotea"
+                    android:outlineAmbientShadowColor="@color/turchese"
+                    android:outlineSpotShadowColor="@color/turchese">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -93,7 +94,9 @@
                     android:layout_marginTop="40dp"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="20dp"
-                    android:id="@+id/ryanair">
+                    android:id="@+id/ryanair"
+                    android:outlineAmbientShadowColor="@color/turchese"
+                    android:outlineSpotShadowColor="@color/turchese">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -134,7 +137,9 @@
                     android:layout_marginTop="20dp"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="20dp"
-                    android:id="@+id/easyjet">
+                    android:id="@+id/easyjet"
+                    android:outlineAmbientShadowColor="@color/turchese"
+                    android:outlineSpotShadowColor="@color/turchese">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -169,7 +174,9 @@
                     android:layout_marginTop="20dp"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="20dp"
-                    android:id="@+id/meridiana">
+                    android:id="@+id/meridiana"
+                    android:outlineAmbientShadowColor="@color/turchese"
+                    android:outlineSpotShadowColor="@color/turchese">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -245,7 +252,9 @@
                     android:layout_marginTop="20dp"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="20dp"
-                    android:id="@+id/etihad">
+                    android:id="@+id/etihad"
+                    android:outlineAmbientShadowColor="@color/turchese"
+                    android:outlineSpotShadowColor="@color/turchese">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -286,7 +295,9 @@
                     android:layout_marginTop="20dp"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="20dp"
-                    android:id="@+id/airitaly">
+                    android:id="@+id/airitaly"
+                    android:outlineAmbientShadowColor="@color/turchese"
+                    android:outlineSpotShadowColor="@color/turchese">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -321,7 +332,9 @@
                     android:layout_marginTop="20dp"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="20dp"
-                    android:id="@+id/airfrance">
+                    android:id="@+id/airfrance"
+                    android:outlineAmbientShadowColor="@color/turchese"
+                    android:outlineSpotShadowColor="@color/turchese">
 
                     <LinearLayout
                         android:layout_width="match_parent"

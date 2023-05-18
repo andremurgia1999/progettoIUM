@@ -137,7 +137,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_gravity="center_vertical">
+        android:layout_gravity="center_vertical"
+        android:onClick="ClickChiSiamo">
 
         <TextView
             android:layout_width="0dp"
@@ -171,7 +172,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_gravity="center_vertical">
+        android:layout_gravity="center_vertical"
+        android:onClick="ClickContatti">
 
         <TextView
             android:layout_width="0dp"

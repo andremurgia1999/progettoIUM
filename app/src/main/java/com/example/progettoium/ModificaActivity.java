@@ -25,13 +25,14 @@ import java.util.Calendar;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class RegistrationActivity extends AppCompatActivity {
+public class ModificaActivity extends AppCompatActivity {
+
 
     TextInputLayout textInputLayoutNome, textInputLayoutCognome, textInputLayoutData, textInputLayoutCF, textInputLayoutCellulare,
-                    textInputLayoutEmail, textInputLayoutUsernameReg, textInputLayoutPasswordReg, textInputLayoutPasswordRepeat;
+            textInputLayoutEmail, textInputLayoutUsernameReg, textInputLayoutPasswordReg, textInputLayoutPasswordRepeat;
 
     TextInputEditText textInputEditTextNome, textInputEditTextCognome, textInputEditTextData, textInputEditTextCF, textInputEditTextCellulare,
-                      textInputEditTextEmail, textInputEditTextUsernameReg, textInputEditTextPasswordReg, textInputEditTextPasswordRepeat;
+            textInputEditTextEmail, textInputEditTextUsernameReg, textInputEditTextPasswordReg, textInputEditTextPasswordRepeat;
 
     Button buttonRegistrati;
 
@@ -42,7 +43,7 @@ public class RegistrationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registration);
+        setContentView(R.layout.activity_modifica);
 
         errorLogin = findViewById(R.id.errorLogin);
 
@@ -130,9 +131,9 @@ public class RegistrationActivity extends AppCompatActivity {
                     textInputEditTextData.setRawInputType(InputType.TYPE_NULL); //per non fare uscire la tastiera
 
                     //DatePicker datePicker = new DatePicker(RegistrationActivity.this);
-                    AlertDialog.Builder datePickerDialog = new AlertDialog.Builder(RegistrationActivity.this);
+                    AlertDialog.Builder datePickerDialog = new AlertDialog.Builder(ModificaActivity.this);
 
-                    LayoutInflater inflater = LayoutInflater.from(RegistrationActivity.this);
+                    LayoutInflater inflater = LayoutInflater.from(ModificaActivity.this);
                     DatePicker datePicker = (DatePicker)inflater.inflate(R.layout.date_spinner,null);;
 
                     datePicker.setMaxDate(System.currentTimeMillis() - 1000);
@@ -451,22 +452,8 @@ public class RegistrationActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (checkInput()) {
                     errorLogin.setVisibility(View.GONE);
-                    AlertDialog.Builder dialog = new AlertDialog.Builder(RegistrationActivity.this);
-                    dialog.setTitle("Registrazione effettauta!");
-                    dialog.setMessage("Caro " + textInputEditTextUsernameReg.getText().toString() + "il tuo account è stato creato.\nPuoi accedere al tuo profilo inserendo" +
-                                    " username e password scelte nella fase di registrazione");
-                    dialog.setPositiveButton("ok", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            finish();
-                        }
-                    });
-                    dialog.setNeutralButton("Vai a login", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            redirectActivity(RegistrationActivity.this, LoginActivity.class);
-                        }
-                    });
-                    dialog.show();
+                    finish();
+                    Toast.makeText(getApplicationContext(), "Dati modificati correttamente", Toast.LENGTH_LONG).show();
                 }
                 else{
                     errorLogin.setVisibility(View.VISIBLE);

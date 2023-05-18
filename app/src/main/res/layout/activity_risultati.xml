@@ -1,0 +1,531 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation = "vertical">
+
+        <include layout="@layout/risultati_toolbar"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:background="@color/color2"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:id="@+id/expand">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5 risultati ottenuti"
+            android:textColor="@color/white"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:textSize="25dp"
+            android:id="@+id/ris"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Piu informazioni"
+            android:textColor="@color/white"
+            android:layout_marginLeft="200dp"
+            android:layout_below="@+id/ris"
+            android:textSize="20dp"
+            android:layout_marginTop="5dp"
+            android:id="@+id/piu"/>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/baseline_arrow_drop_down_24"
+            android:layout_toRightOf="@+id/piu"
+            android:layout_below="@+id/ris"
+            android:layout_marginTop="5dp"
+            android:id="@+id/giu"/>
+
+    </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="0dp"
+            android:background="@color/color2"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:visibility="gone"
+            android:id="@+id/expended">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Andata"
+            android:textColor="@color/white"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:textSize="22dp"
+            android:textStyle="bold"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="da"
+                android:textColor="@color/white"
+                android:layout_marginLeft="10dp"
+                android:textSize="20dp"
+                android:id="@+id/da"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cagliari (CAG)"
+                android:textColor="@color/border_grey"
+                android:layout_toRightOf="@+id/da"
+                android:layout_marginLeft="10dp"
+                android:textSize="20dp"
+                android:id="@+id/partenza"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="a"
+                android:textColor="@color/white"
+                android:layout_marginLeft="10dp"
+                android:textSize="20dp"
+                android:layout_toRightOf="@+id/partenza"
+                android:id="@+id/a"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Roma (ROM)"
+                android:textColor="@color/border_grey"
+                android:layout_toRightOf="@+id/a"
+                android:layout_marginLeft="10dp"
+                android:textSize="20dp"
+                android:id="@+id/arrivo"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="il"
+                android:textColor="@color/white"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/da"
+                android:textSize="20dp"
+                android:id="@+id/il"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="25/07/2023"
+                android:textColor="@color/border_grey"
+                android:layout_below="@+id/da"
+                android:layout_toRightOf="@+id/il"
+                android:layout_marginLeft="10dp"
+                android:textSize="20dp"
+                android:id="@+id/data"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ritorno"
+            android:textColor="@color/white"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:textSize="22dp"
+            android:textStyle="bold"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="da"
+                android:textColor="@color/white"
+                android:layout_marginLeft="10dp"
+                android:textSize="20dp"
+                android:id="@+id/da2"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Roma (ROM)"
+                android:textColor="@color/border_grey"
+                android:layout_toRightOf="@+id/da2"
+                android:layout_marginLeft="10dp"
+                android:textSize="20dp"
+                android:id="@+id/partenza2"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="a"
+                android:textColor="@color/white"
+                android:layout_marginLeft="10dp"
+                android:textSize="20dp"
+                android:layout_toRightOf="@+id/partenza2"
+                android:id="@+id/a2"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cagliari (CAG)"
+                android:textColor="@color/border_grey"
+                android:layout_toRightOf="@+id/a2"
+                android:layout_marginLeft="10dp"
+                android:textSize="20dp"
+                android:id="@+id/arrivo2"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="il"
+                android:textColor="@color/white"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/da2"
+                android:textSize="20dp"
+                android:id="@+id/il2"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30/07/2023"
+                android:textColor="@color/border_grey"
+                android:layout_below="@+id/da2"
+                android:layout_toRightOf="@+id/il2"
+                android:layout_marginLeft="10dp"
+                android:textSize="20dp"
+                android:id="@+id/data2"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Passeggeri"
+                android:textColor="@color/white"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@id/data2"
+                android:id="@+id/pass"
+                android:textSize="22dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1 Adulto"
+                android:textColor="@color/border_grey"
+                android:layout_below="@+id/pass"
+                android:layout_marginLeft="10dp"
+                android:textSize="20dp"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/ad"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Meno informazioni"
+                android:textColor="@color/white"
+                android:layout_marginLeft="180dp"
+                android:layout_below="@+id/ad"
+                android:textSize="20dp"
+                android:layout_marginTop="5dp"
+                android:id="@+id/meno"/>
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/baseline_arrow_drop_up_24"
+                android:layout_toRightOf="@+id/meno"
+                android:layout_below="@+id/ad"
+                android:id="@+id/su"
+                android:layout_marginTop="5dp"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="5dp"
+                android:text="Ordina"
+                android:textSize="17dp"
+                android:id="@+id/ordina"
+                android:backgroundTint="@color/turchese"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="20dp"
+                android:text="Filtra"
+                android:textSize="17dp"
+                android:id="@+id/filtra"
+                android:backgroundTint="@color/turchese"/>
+        </LinearLayout>
+
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="20dp"
+            android:outlineAmbientShadowColor="@color/turchese"
+            android:outlineSpotShadowColor="@color/turchese">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:text="25/07/2023"
+                    android:layout_marginLeft="175dp"
+                    android:layout_marginTop="2dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/ryanair"
+                    android:id="@+id/comp_partenza"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:text="CAG"
+                    android:layout_alignParentTop="@id/decollo"
+                    android:layout_marginLeft="115dp"
+                    android:layout_marginTop="2dp"
+                    android:id="@+id/aeroporto"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:text="ROM"
+                    android:layout_alignParentTop="@id/decollo"
+                    android:layout_marginLeft="275dp"
+                    android:layout_marginTop="2dp"
+                    android:id="@+id/aeroporto2"/>
+
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_height="1dp"
+                    android:background="@color/border_grey"
+                    android:id="@+id/linea"
+                    android:layout_toRightOf="@id/comp_partenza"
+                    android:layout_below="@id/decollo"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="-7dp"
+                    android:orientation="horizontal"/>
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_toRightOf="@id/comp_partenza"
+                    android:layout_marginLeft="110dp"
+                    android:layout_marginTop="-30dp"
+                    android:layout_below="@+id/aeroporto"
+                    android:src="@drawable/decollo"
+                    android:id="@+id/decollo"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:text="06:25"
+                    android:layout_below="@id/linea"
+                    android:layout_marginLeft="115dp"
+                    android:layout_marginTop="2dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:text="07:30"
+                    android:layout_below="@id/linea"
+                    android:layout_marginLeft="272dp"
+                    android:layout_marginTop="2dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:textColor="@color/turchese"
+                    android:text="Diretto"
+                    android:layout_below="@id/linea"
+                    android:layout_marginLeft="189dp"
+                    android:layout_marginTop="2dp"
+                    android:id="@+id/diretto"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:textColor="@color/turchese"
+                    android:text="1h 5m"
+                    android:layout_below="@id/diretto"
+                    android:layout_marginLeft="190dp"/>
+
+            </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:text="30/07/2023"
+                    android:layout_marginLeft="175dp"
+                    android:layout_marginTop="10dp"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/airitaly"
+                        android:id="@+id/comp_partenza2"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="ROM"
+                        android:layout_alignParentTop="@id/decollo2"
+                        android:layout_marginLeft="115dp"
+                        android:layout_marginTop="2dp"
+                        android:id="@+id/aeroporto3"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="CAG"
+                        android:layout_alignParentTop="@id/decollo2"
+                        android:layout_marginLeft="275dp"
+                        android:layout_marginTop="2dp"
+                        android:id="@+id/aeroporto4"/>
+
+                    <LinearLayout
+                        android:layout_width="200dp"
+                        android:layout_height="1dp"
+                        android:background="@color/border_grey"
+                        android:id="@+id/linea2"
+                        android:layout_toRightOf="@id/comp_partenza2"
+                        android:layout_below="@id/decollo2"
+                        android:layout_marginLeft="35dp"
+                        android:layout_marginTop="-7dp"
+                        android:orientation="horizontal"/>
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_toRightOf="@id/comp_partenza2"
+                        android:layout_marginLeft="110dp"
+                        android:layout_marginTop="-30dp"
+                        android:layout_below="@+id/aeroporto3"
+                        android:src="@drawable/atterragio"
+                        android:id="@+id/decollo2"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="19:40"
+                        android:layout_below="@id/linea2"
+                        android:layout_marginLeft="115dp"
+                        android:layout_marginTop="2dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="20:35"
+                        android:layout_below="@id/linea2"
+                        android:layout_marginLeft="272dp"
+                        android:layout_marginTop="2dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:textColor="@color/turchese"
+                        android:text="Diretto"
+                        android:layout_below="@id/linea2"
+                        android:layout_marginLeft="189dp"
+                        android:layout_marginTop="2dp"
+                        android:id="@+id/diretto2"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:textColor="@color/turchese"
+                        android:text="0h 55m"
+                        android:layout_below="@id/diretto2"
+                        android:layout_marginLeft="187dp"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/turchese"
+                    android:text="65€"
+                    android:layout_marginLeft="317dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="10dp"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>

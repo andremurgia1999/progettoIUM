@@ -198,7 +198,8 @@
         android:orientation="horizontal"
         android:layout_gravity="center_vertical"
         android:id="@+id/Modifica"
-        android:visibility="gone">
+        android:visibility="gone"
+        android:onClick="ClickModifica">
 
         <TextView
             android:layout_width="0dp"
@@ -237,7 +238,8 @@
         android:orientation="horizontal"
         android:layout_gravity="center_vertical"
         android:id="@+id/Logout"
-        android:visibility="gone">
+        android:visibility="gone"
+        android:onClick="ClickLogout">
 
         <TextView
             android:layout_width="0dp"

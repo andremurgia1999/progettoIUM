@@ -69,6 +69,8 @@ public class MainActivity extends AppCompatActivity {
 
     static LinearLayout Login, Registrati, IlMioAccount, LeMiePrenotazioni, IMieiViaggi, Modifica, Logout,
             div1, div2, div3, div4, div5, div6, div7, div8, userLogin;
+
+    static boolean log = false;
 ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -300,7 +302,8 @@ public class MainActivity extends AppCompatActivity {
         cercaVoli.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                checkInput();
+                //checkInput();
+                redirectActivity(MainActivity.this, RisultatiActivity.class);
             }
         });
 
@@ -473,6 +476,16 @@ public class MainActivity extends AppCompatActivity {
         closeDrawer(drawerLayout);
         redirectActivity(this, CompaniesActivity.class);
     }
+    
+    public void ClickChiSiamo(View view){
+        closeDrawer(drawerLayout);
+        redirectActivity(this, NoiActivity.class);
+    }
+
+    public void ClickContatti(View view){
+        closeDrawer(drawerLayout);
+        redirectActivity(this, ContattiActivity.class);
+    }
 
     public void ClickLogin(View view){
         closeDrawer2(drawerLayout);
@@ -484,12 +497,23 @@ public class MainActivity extends AppCompatActivity {
         redirectActivity(this, RegistrationActivity.class);
     }
 
+    public void ClickModifica(View view){
+        closeDrawer2(drawerLayout);
+        redirectActivity(this, ModificaActivity.class);
+    }
+
+    public void ClickLogout(View view){
+        closeDrawer2(drawerLayout);
+        isLogout();
+    }
+
     private void redirectActivity(Activity old_activity, Class new_activity) {
         Intent intent = new Intent(old_activity, new_activity);
         old_activity.startActivity(intent);
     }
 
     public static void isLogged(Context context){
+        log = true;
         Toast.makeText(context, "Login effettuato, Benvenuto IUM2023", Toast.LENGTH_LONG).show();
         Login.setVisibility(View.GONE);
         Registrati.setVisibility(View.GONE);
@@ -511,5 +535,30 @@ public class MainActivity extends AppCompatActivity {
 
         imgPersonalArea.setVisibility(View.GONE);
         userLogin.setVisibility(View.VISIBLE);
+    }
+
+    public void isLogout() {
+        log = false;
+        Toast.makeText(getApplicationContext(), "Logout effettuato, Arrivederci IUM2023", Toast.LENGTH_LONG).show();
+        Login.setVisibility(View.VISIBLE);
+        Registrati.setVisibility(View.VISIBLE);
+        IlMioAccount.setVisibility(View.GONE);
+        LeMiePrenotazioni.setVisibility(View.GONE);
+        IMieiViaggi.setVisibility(View.GONE);
+        Modifica.setVisibility(View.GONE);
+        Logout.setVisibility(View.GONE);
+
+        //per bordi
+        div1.setVisibility(View.GONE);
+        div2.setVisibility(View.GONE);
+        div3.setVisibility(View.GONE);
+        div4.setVisibility(View.GONE);
+        div5.setVisibility(View.GONE);
+        div6.setVisibility(View.VISIBLE);
+        div7.setVisibility(View.VISIBLE);
+        div8.setVisibility(View.VISIBLE);
+
+        imgPersonalArea.setVisibility(View.VISIBLE);
+        userLogin.setVisibility(View.GONE);
     }
 }
