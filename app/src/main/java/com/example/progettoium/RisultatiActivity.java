@@ -2,10 +2,14 @@ package com.example.progettoium;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -21,6 +25,9 @@ public class RisultatiActivity extends AppCompatActivity {
     TextView piu, meno;
 
     Button ordina, filtra;
+
+    CheckBox check_prezzo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +43,11 @@ public class RisultatiActivity extends AppCompatActivity {
         ordina = findViewById(R.id.ordina);
         lista_filtri = findViewById(R.id.lista_filtri);
         spazio = findViewById(R.id.spazio);
+
+        filtra = findViewById(R.id.filtra);
+
+        check_prezzo = findViewById(R.id.check_prezzo);
+
         piu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,6 +84,28 @@ public class RisultatiActivity extends AppCompatActivity {
             }
         });
 
+        check_prezzo.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(check_prezzo.isChecked()){
+                    //finish();
+                }
+            }
+        });
+
+        filtra.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                redirectActivity(RisultatiActivity.this, FiltraActivity.class);
+            }
+        });
+
 
     }
+
+    private void redirectActivity(Activity old_activity, Class new_activity) {
+        Intent intent = new Intent(old_activity, new_activity);
+        old_activity.startActivity(intent);
+    }
 }
+
