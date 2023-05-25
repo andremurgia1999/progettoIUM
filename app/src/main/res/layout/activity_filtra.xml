@@ -119,6 +119,249 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Compagnie aeree"
+                android:textSize="23dp"
+                android:textColor="@color/turchese"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/compagnie"
+                android:layout_marginBottom="5dp"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/compagnie"
+                android:id="@+id/click_compagnie_aeree">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Qualsiasi"
+                    android:textSize="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/qualsiasi"/>
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/drop_down"
+                    android:layout_toRightOf="@id/qualsiasi"
+                    android:layout_marginLeft="221dp"
+                    android:id="@+id/giu"/>
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/drop_down"
+                    android:layout_toRightOf="@id/qualsiasi"
+                    android:layout_marginLeft="51dp"
+                    android:id="@+id/giu2"
+                    android:visibility="gone"/>
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/drop_up"
+                    android:layout_toRightOf="@id/qualsiasi"
+                    android:layout_marginLeft="221dp"
+                    android:visibility="gone"
+                    android:id="@+id/su"/>
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/drop_up"
+                    android:layout_toRightOf="@id/qualsiasi"
+                    android:layout_marginLeft="51dp"
+                    android:id="@+id/su2"
+                    android:visibility="gone"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/border_grey"
+                    android:layout_below="@id/qualsiasi"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="4dp">
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:visibility="gone"
+                android:id="@+id/lista_filtri"
+                android:layout_marginBottom="10dp"
+                android:layout_below="@id/click_compagnie_aeree"
+                android:background="@drawable/border"
+                android:layout_marginTop="-3dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/alitalia"
+                        android:id="@+id/img_alitalia"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"/>
+
+                    <TextView
+                        android:id="@+id/alitalia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginBottom="4dp"
+                        android:text="ITA Airways"
+                        android:layout_centerVertical="true"
+                        android:textSize="20dp"
+                        android:layout_toRightOf="@id/img_alitalia"/>
+
+                    <Switch
+                        android:id="@+id/alitalia_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/alitalia"
+                        android:layout_marginLeft="80dp"
+                        android:layout_centerVertical="true"
+                        android:checked="true"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="-1dp">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/ryanair"
+                        android:id="@+id/img_ryanair"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"/>
+
+                    <TextView
+                        android:id="@+id/ryanair"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginBottom="4dp"
+                        android:text="Ryanair"
+                        android:layout_centerVertical="true"
+                        android:textSize="20dp"
+                        android:layout_toRightOf="@id/img_ryanair"/>
+
+                    <Switch
+                        android:id="@+id/ryanair_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/ryanair"
+                        android:layout_marginLeft="118dp"
+                        android:layout_centerVertical="true"
+                        android:checked="true"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="-1dp">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/airitaly"
+                        android:id="@+id/img_airitaly"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"/>
+
+                    <TextView
+                        android:id="@+id/airitaly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginBottom="4dp"
+                        android:text="AirItaly"
+                        android:layout_centerVertical="true"
+                        android:textSize="20dp"
+                        android:layout_toRightOf="@id/img_airitaly"/>
+
+                    <Switch
+                        android:id="@+id/airitaly_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/airitaly"
+                        android:layout_marginLeft="123dp"
+                        android:layout_centerVertical="true"
+                        android:checked="true"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="-1dp">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/easyjet"
+                        android:id="@+id/img_easy"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"/>
+
+                    <TextView
+                        android:id="@+id/easy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginBottom="4dp"
+                        android:text="EasyJet"
+                        android:layout_centerVertical="true"
+                        android:textSize="20dp"
+                        android:layout_toRightOf="@id/img_easy"/>
+
+                    <Switch
+                        android:id="@+id/easy_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/easy"
+                        android:layout_marginLeft="115dp"
+                        android:layout_centerVertical="true"
+                        android:checked="true"/>
+
+                </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/border_grey">
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:layout_marginTop="10dp">
 
             <TextView
@@ -134,7 +377,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="min"
+                android:text="€ 0"
                 android:textSize="15dp"
                 android:layout_below="@+id/progressBar"
                 android:id="@+id/min"
@@ -143,11 +386,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="max"
+                android:text="€ 200 +"
                 android:textSize="15dp"
                 android:layout_below="@+id/progressBar"
                 android:id="@+id/max"
-                android:layout_marginLeft="330dp"/>
+                android:layout_marginLeft="310dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -165,6 +408,8 @@
                 android:layout_below="@id/prezzo"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="15dp"
+                android:min="0"
+                android:max="200"
                 style="?android:attr/progressBarStyleHorizontal" />
 
             <SeekBar
@@ -172,7 +417,9 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/prezzo"
                 android:id="@+id/seekBar"
-                android:layout_marginTop="-1dp"/>
+                android:layout_marginTop="-1dp"
+                android:min="0"
+                android:max="200"/>
 
         </RelativeLayout>
 
@@ -181,6 +428,75 @@
             android:layout_height="1dp"
             android:background="@color/border_grey"
             android:layout_marginTop="15dp">
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Durata"
+                android:textSize="23dp"
+                android:textColor="@color/turchese"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/prezzo3"
+                android:layout_marginBottom="30dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0h 0m"
+                android:textSize="15dp"
+                android:layout_below="@+id/progressBar3"
+                android:id="@+id/min3"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="24h 0m"
+                android:textSize="15dp"
+                android:layout_below="@+id/progressBar3"
+                android:id="@+id/max3"
+                android:layout_marginLeft="305dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Qualsiasi"
+                android:textSize="20dp"
+                android:layout_above="@id/progressBar3"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/progress3"/>
+
+            <ProgressBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/progressBar3"
+                android:layout_below="@id/prezzo3"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="15dp"
+                style="?android:attr/progressBarStyleHorizontal" />
+
+            <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/prezzo3"
+                android:id="@+id/seekBar3"
+                android:layout_marginTop="-1dp"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/border_grey"
+            android:layout_marginTop="10dp">
         </LinearLayout>
 
         <RelativeLayout
@@ -321,67 +637,17 @@
             android:layout_marginTop="10dp">
         </LinearLayout>
 
-        <RelativeLayout
+        <Button
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="10dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Durata"
-                android:textSize="23dp"
-                android:textColor="@color/turchese"
-                android:layout_centerHorizontal="true"
-                android:id="@+id/prezzo3"
-                android:layout_marginBottom="30dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0h 0m"
-                android:textSize="15dp"
-                android:layout_below="@+id/progressBar3"
-                android:id="@+id/min3"
-                android:layout_marginLeft="10dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="24h 0m"
-                android:textSize="15dp"
-                android:layout_below="@+id/progressBar3"
-                android:id="@+id/max3"
-                android:layout_marginLeft="305dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Qualsiasi"
-                android:textSize="20dp"
-                android:layout_above="@id/progressBar3"
-                android:layout_centerHorizontal="true"
-                android:id="@+id/progress3"/>
-
-            <ProgressBar
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/progressBar3"
-                android:layout_below="@id/prezzo3"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="15dp"
-                style="?android:attr/progressBarStyleHorizontal" />
-
-            <SeekBar
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/prezzo3"
-                android:id="@+id/seekBar3"
-                android:layout_marginTop="-1dp"/>
-
-        </RelativeLayout>
+            android:layout_height="67dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:text="Applica filtri"
+            android:gravity="center"
+            android:id="@+id/ButtonFiltra"
+            android:backgroundTint="@color/turchese"/>
 
     </LinearLayout>
 </ScrollView>

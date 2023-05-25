@@ -19,7 +19,7 @@ import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.TextView;
 
-public class FiltraActivity extends AppCompatActivity {
+public class RisultatiFiltrati extends AppCompatActivity {
 
     TextView progress_prezzo, progress_durata, progress_partenza, progress_arrivo;
     ProgressBar progressBar;
@@ -41,7 +41,7 @@ public class FiltraActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_filtra);
+        setContentView(R.layout.activity_risultati_filtrati);
 
         progress_prezzo = findViewById(R.id.progress);
         progressBar = findViewById(R.id.progressBar);
@@ -238,8 +238,6 @@ public class FiltraActivity extends AppCompatActivity {
         buttonFiltra.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
-                redirectActivity(FiltraActivity.this, RisultatiFiltrati.class);
             }
         });
     }

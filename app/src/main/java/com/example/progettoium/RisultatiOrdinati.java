@@ -15,7 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-public class RisultatiActivity extends AppCompatActivity {
+public class RisultatiOrdinati extends AppCompatActivity {
 
     LinearLayout expended, lista_filtri, spazio;
     RelativeLayout expand;
@@ -31,7 +31,7 @@ public class RisultatiActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_risultati);
+        setContentView(R.layout.activity_risultati_ordinati);
 
         expand = findViewById(R.id.expand);
         expended = findViewById(R.id.expended);
@@ -88,8 +88,7 @@ public class RisultatiActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if(check_prezzo.isChecked()){
-                    finish();
-                    redirectActivity(RisultatiActivity.this, RisultatiOrdinati.class);
+                    //finish();
                 }
             }
         });
@@ -97,7 +96,7 @@ public class RisultatiActivity extends AppCompatActivity {
         filtra.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                redirectActivity(RisultatiActivity.this, FiltraActivity.class);
+                redirectActivity(RisultatiOrdinati.this, FiltraActivity.class);
             }
         });
 
