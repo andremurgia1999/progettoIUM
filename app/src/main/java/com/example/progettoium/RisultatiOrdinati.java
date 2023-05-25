@@ -96,6 +96,7 @@ public class RisultatiOrdinati extends AppCompatActivity {
         filtra.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                finish();
                 redirectActivity(RisultatiOrdinati.this, FiltraActivity.class);
             }
         });
