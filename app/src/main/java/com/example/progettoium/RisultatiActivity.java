@@ -112,5 +112,9 @@ public class RisultatiActivity extends AppCompatActivity {
         Intent intent = new Intent(old_activity, new_activity);
         old_activity.startActivity(intent);
     }
+
+    public void ClickRyanair(View view){
+        redirectActivity(this, VisualizzaRisultatoActivity.class);
+    }
 }
 

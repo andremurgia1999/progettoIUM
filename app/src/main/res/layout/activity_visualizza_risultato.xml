@@ -1,0 +1,618 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scroll">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation = "vertical">
+
+            <include layout="@layout/risultato_toolbar"/>
+
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/turchese"
+                    android:id="@+id/linea"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/decollo"/>
+
+                <ImageView
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:src="@drawable/baseline_flight_takeoff_24"
+                    android:id="@+id/decollo"
+                    android:layout_marginBottom="-11dp"
+                    android:layout_marginLeft="70dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Andata"
+                    android:textColor="@color/turchese"
+                    android:layout_marginTop="17dp"
+                    android:textSize="30dp"
+                    android:textStyle="italic"
+                    android:layout_toRightOf="@id/decollo"
+                    android:layout_marginLeft="50dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="da "
+                    android:textColor="@color/border_grey"
+                    android:layout_marginTop="10dp"
+                    android:textSize="24dp"
+                    android:id="@+id/da"
+                    android:layout_below="@id/linea"
+                    android:layout_marginLeft="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cagliari (CAG) "
+                    android:textColor="@color/turchese"
+                    android:layout_marginTop="10dp"
+                    android:textSize="24dp"
+                    android:id="@+id/cagliari"
+                    android:layout_below="@id/linea"
+                    android:layout_toRightOf="@id/da"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="a "
+                    android:textColor="@color/border_grey"
+                    android:layout_marginTop="10dp"
+                    android:textSize="24dp"
+                    android:id="@+id/a"
+                    android:layout_below="@id/linea"
+                    android:layout_toRightOf="@id/cagliari"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Roma (ROM) "
+                    android:textColor="@color/turchese"
+                    android:layout_marginTop="10dp"
+                    android:textSize="24dp"
+                    android:id="@+id/roma"
+                    android:layout_below="@id/linea"
+                    android:layout_toRightOf="@id/a"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:orientation = "vertical"
+                    android:background="@drawable/border_turchese"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/imm">
+
+                    <ImageView
+                        android:id="@+id/logo_compagnia"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/ryanair"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Volo operato da: "
+                    android:textColor="@color/border_grey"
+                    android:layout_marginTop="10dp"
+                    android:textSize="20dp"
+                    android:id="@+id/operato"
+                    android:layout_below="@+id/imm"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RYANAIR"
+                    android:textColor="@color/turchese"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:id="@+id/comp"
+                    android:layout_toRightOf="@+id/operato"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/imm"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Il: "
+                    android:textColor="@color/border_grey"
+                    android:textSize="20dp"
+                    android:id="@+id/il"
+                    android:layout_below="@id/operato"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="25/07/2023"
+                    android:textColor="@color/turchese"
+                    android:textSize="20dp"
+                    android:id="@+id/data"
+                    android:layout_below="@+id/operato"
+                    android:layout_toRightOf="@+id/il"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Durata stimata: "
+                    android:textColor="@color/border_grey"
+                    android:textSize="20dp"
+                    android:id="@+id/durata"
+                    android:layout_below="@id/il"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1h 5m"
+                    android:textColor="@color/turchese"
+                    android:textSize="20dp"
+                    android:id="@+id/dur"
+                    android:layout_below="@+id/il"
+                    android:layout_toRightOf="@+id/durata"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ora di partenza: "
+                    android:textColor="@color/border_grey"
+                    android:textSize="20dp"
+                    android:id="@+id/orario"
+                    android:layout_below="@id/durata"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="09:30"
+                    android:textColor="@color/turchese"
+                    android:textSize="20dp"
+                    android:id="@+id/ora"
+                    android:layout_below="@+id/durata"
+                    android:layout_toRightOf="@+id/orario"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ora di arrivo: "
+                    android:textColor="@color/border_grey"
+                    android:textSize="20dp"
+                    android:id="@+id/orario2"
+                    android:layout_below="@id/orario"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10:35"
+                    android:textColor="@color/turchese"
+                    android:textSize="20dp"
+                    android:id="@+id/ora2"
+                    android:layout_below="@+id/orario"
+                    android:layout_toRightOf="@+id/orario2"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Numero di scali: "
+                    android:textColor="@color/border_grey"
+                    android:textSize="20dp"
+                    android:id="@+id/numero"
+                    android:layout_below="@id/ora2"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DIRETTO"
+                    android:textColor="@color/turchese"
+                    android:textSize="20dp"
+                    android:id="@+id/scali"
+                    android:layout_below="@+id/ora2"
+                    android:layout_toRightOf="@+id/numero"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Passeggeri: "
+                    android:textColor="@color/border_grey"
+                    android:textSize="20dp"
+                    android:id="@+id/passeggeri"
+                    android:layout_below="@id/numero"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1 passeggero ADULTO"
+                    android:textColor="@color/turchese"
+                    android:textSize="20dp"
+                    android:id="@+id/adulto"
+                    android:layout_below="@+id/numero"
+                    android:layout_toRightOf="@+id/passeggeri"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="130dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/passeggeri"
+                    android:layout_marginLeft="230dp"
+                    android:layout_marginTop="20dp"
+                    app:cardCornerRadius="20dp"
+                    android:elevation="20dp"
+                    android:id="@+id/ritorno"
+                    android:layout_marginBottom="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="RITORNO"
+                                android:textSize="16dp"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginLeft="18dp"
+                                android:id="@+id/testo"/>
+
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:src="@drawable/down"
+                                android:layout_toRightOf="@id/testo"
+                                android:layout_marginTop="14dp"
+                                android:layout_marginLeft="5dp"/>
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/turchese"
+                    android:id="@+id/linea2"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/decollo2"/>
+
+                <ImageView
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:src="@drawable/baseline_flight_land_24"
+                    android:id="@+id/decollo2"
+                    android:layout_marginBottom="-11dp"
+                    android:layout_marginLeft="70dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ritorno"
+                    android:textColor="@color/turchese"
+                    android:layout_marginTop="17dp"
+                    android:textSize="30dp"
+                    android:textStyle="italic"
+                    android:layout_toRightOf="@id/decollo2"
+                    android:layout_marginLeft="50dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="da "
+                    android:textColor="@color/border_grey"
+                    android:layout_marginTop="10dp"
+                    android:textSize="24dp"
+                    android:id="@+id/da2"
+                    android:layout_below="@id/linea2"
+                    android:layout_marginLeft="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Roma (ROM) "
+                    android:textColor="@color/turchese"
+                    android:layout_marginTop="10dp"
+                    android:textSize="24dp"
+                    android:id="@+id/cagliari2"
+                    android:layout_below="@id/linea2"
+                    android:layout_toRightOf="@id/da2"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="a "
+                    android:textColor="@color/border_grey"
+                    android:layout_marginTop="10dp"
+                    android:textSize="24dp"
+                    android:id="@+id/a2"
+                    android:layout_below="@id/linea2"
+                    android:layout_toRightOf="@id/cagliari2"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cagliari (CAG) "
+                    android:textColor="@color/turchese"
+                    android:layout_marginTop="10dp"
+                    android:textSize="24dp"
+                    android:id="@+id/roma2"
+                    android:layout_below="@id/linea2"
+                    android:layout_toRightOf="@id/a2"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:orientation = "vertical"
+                    android:background="@drawable/border_turchese"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/imm2">
+
+                    <ImageView
+                        android:id="@+id/logo_compagnia2"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/ryanair"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Volo operato da: "
+                    android:textColor="@color/border_grey"
+                    android:layout_marginTop="10dp"
+                    android:textSize="20dp"
+                    android:id="@+id/operato2"
+                    android:layout_below="@+id/imm2"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RYANAIR"
+                    android:textColor="@color/turchese"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:id="@+id/comp2"
+                    android:layout_toRightOf="@+id/operato2"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/imm2"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Il: "
+                    android:textColor="@color/border_grey"
+                    android:textSize="20dp"
+                    android:id="@+id/il2"
+                    android:layout_below="@id/operato2"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="30/07/2023"
+                    android:textColor="@color/turchese"
+                    android:textSize="20dp"
+                    android:id="@+id/data2"
+                    android:layout_below="@+id/operato2"
+                    android:layout_toRightOf="@+id/il2"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Durata stimata: "
+                    android:textColor="@color/border_grey"
+                    android:textSize="20dp"
+                    android:id="@+id/durata2"
+                    android:layout_below="@id/il2"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1h 5m"
+                    android:textColor="@color/turchese"
+                    android:textSize="20dp"
+                    android:id="@+id/dur2"
+                    android:layout_below="@+id/il2"
+                    android:layout_toRightOf="@+id/durata2"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ora di partenza: "
+                    android:textColor="@color/border_grey"
+                    android:textSize="20dp"
+                    android:id="@+id/orario3"
+                    android:layout_below="@id/durata2"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="22:40"
+                    android:textColor="@color/turchese"
+                    android:textSize="20dp"
+                    android:id="@+id/ora3"
+                    android:layout_below="@+id/durata2"
+                    android:layout_toRightOf="@+id/orario3"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ora di arrivo: "
+                    android:textColor="@color/border_grey"
+                    android:textSize="20dp"
+                    android:id="@+id/orario4"
+                    android:layout_below="@id/orario3"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="23:45"
+                    android:textColor="@color/turchese"
+                    android:textSize="20dp"
+                    android:id="@+id/ora4"
+                    android:layout_below="@+id/orario3"
+                    android:layout_toRightOf="@+id/orario4"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Numero di scali: "
+                    android:textColor="@color/border_grey"
+                    android:textSize="20dp"
+                    android:id="@+id/numero2"
+                    android:layout_below="@id/ora4"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DIRETTO"
+                    android:textColor="@color/turchese"
+                    android:textSize="20dp"
+                    android:id="@+id/scali2"
+                    android:layout_below="@+id/ora4"
+                    android:layout_toRightOf="@+id/numero2"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Passeggeri: "
+                    android:textColor="@color/border_grey"
+                    android:textSize="20dp"
+                    android:id="@+id/passeggeri2"
+                    android:layout_below="@id/numero2"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1 passeggero ADULTO"
+                    android:textColor="@color/turchese"
+                    android:textSize="20dp"
+                    android:id="@+id/adulto2"
+                    android:layout_below="@+id/numero2"
+                    android:layout_toRightOf="@+id/passeggeri2"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="130dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/passeggeri2"
+                    android:layout_marginLeft="230dp"
+                    android:layout_marginTop="20dp"
+                    app:cardCornerRadius="20dp"
+                    android:elevation="20dp"
+                    android:id="@+id/andata"
+                    android:layout_marginBottom="130dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ANDATA"
+                            android:textSize="16dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginLeft="18dp"
+                            android:id="@+id/testo2"/>
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/up"
+                            android:layout_toRightOf="@id/testo2"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginLeft="5dp"/>
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/footer"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:background="@color/back_grey"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/prezzo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="35€"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/turchese" />
+
+        <Button
+            android:layout_width="230dp"
+            android:layout_height="67dp"
+            android:layout_marginTop="15dp"
+            android:text="prenota"
+            android:gravity="center"
+            android:textSize="17dp"
+            android:id="@+id/ButtonPrenota"
+            android:backgroundTint="@color/turchese"
+            android:layout_toRightOf="@+id/prezzo"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="120dp"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
+
+
