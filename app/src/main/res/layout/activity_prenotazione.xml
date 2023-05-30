@@ -1,0 +1,518 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scroll">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation = "vertical">
+
+            <include layout="@layout/prenotazione_toolbar"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:orientation = "vertical"
+                android:background="@drawable/border_turchese"
+                android:layout_marginTop="10dp"
+
+                android:id="@+id/imm">
+
+                <ImageView
+                    android:id="@+id/logo_compagnia"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/ryanair"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"/>
+            </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ANDATA e RITORNO"
+                    android:textColor="@color/turchese"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:id="@+id/andata"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/imm"/>
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/baseline_connecting_airports_24"
+                    android:layout_below="@id/andata"
+                    android:id="@+id/aerei"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginRight="10dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="da "
+                android:textColor="@color/border_grey"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:id="@+id/da"
+                android:layout_below="@+id/andata"
+                android:layout_toRightOf="@+id/aerei"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cagliari"
+                android:textColor="@color/turchese"
+                android:textSize="20dp"
+                android:id="@+id/cagliari"
+                android:layout_toRightOf="@+id/da"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/andata"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" a "
+                    android:textColor="@color/border_grey"
+                    android:layout_marginTop="10dp"
+                    android:textSize="20dp"
+                    android:id="@+id/a"
+                    android:layout_below="@+id/andata"
+                    android:layout_toRightOf="@+id/cagliari"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Roma"
+                    android:textColor="@color/turchese"
+                    android:textSize="20dp"
+                    android:id="@+id/comp"
+                    android:layout_toRightOf="@+id/a"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/andata"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="dal "
+                    android:textColor="@color/border_grey"
+                    android:textSize="15dp"
+                    android:id="@+id/il"
+                    android:layout_below="@+id/da"
+                    android:layout_toRightOf="@id/aerei"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="25 Luglio"
+                    android:textColor="@color/turchese"
+                    android:textSize="15dp"
+                    android:id="@+id/data"
+                    android:layout_toRightOf="@+id/il"
+                    android:layout_below="@+id/da"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" al "
+                    android:textColor="@color/border_grey"
+                    android:textSize="15dp"
+                    android:id="@+id/al"
+                    android:layout_below="@+id/da"
+                    android:layout_toRightOf="@id/data"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="30 Luglio"
+                    android:textColor="@color/turchese"
+                    android:textSize="15dp"
+                    android:id="@+id/data2"
+                    android:layout_toRightOf="@+id/al"
+                    android:layout_below="@+id/da"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=", 1 passeggero"
+                    android:textColor="@color/border_grey"
+                    android:textSize="15dp"
+                    android:id="@+id/pass"
+                    android:layout_below="@+id/da"
+                    android:layout_toRightOf="@id/data2"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dati passeggero"
+                    android:textColor="@color/turchese"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:id="@+id/dati"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@+id/pass"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/dati"
+                    android:id="@+id/nomecognome"
+                    android:layout_marginTop="10dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:id="@+id/textInputLayoutNome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Nome"
+                        android:layout_marginRight="5dp"
+                        app:boxStrokeErrorColor="@color/red"
+                        app:errorTextColor="@color/red"
+                        app:errorIconTint="@color/red"
+                        app:startIconDrawable="@drawable/baseline_person_outline_24"
+                        app:endIconMode="clear_text"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_weight="1">
+                        <!--app:expandedHintEnabled="false"-->
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/textInputEditTextNome"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            android:maxLines="1">
+                            <!--android:hint="Inserire nome" -->
+                        </com.google.android.material.textfield.TextInputEditText>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:id="@+id/textInputLayoutCognome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:hint="Cognome"
+                        android:layout_marginLeft="5dp"
+                        app:boxStrokeErrorColor="@color/red"
+                        app:errorTextColor="@color/red"
+                        app:errorIconTint="@color/red"
+                        app:startIconDrawable="@drawable/baseline_person_outline_24"
+                        app:endIconMode="clear_text"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_weight="1">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/textInputEditTextCognome"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            android:maxLines="1">
+                        </com.google.android.material.textfield.TextInputEditText>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/nomecognome"
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/datacodice">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:id="@+id/textInputLayoutData"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Data di nascita"
+                        android:layout_marginRight="5dp"
+                        app:boxStrokeErrorColor="@color/red"
+                        app:errorTextColor="@color/red"
+                        app:errorIconTint="@color/red"
+                        app:startIconDrawable="@drawable/baseline_calendar_month_24"
+                        app:endIconMode="clear_text"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_weight="1">
+                        <!--app:expandedHintEnabled="false"-->
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/textInputEditTextData"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            android:maxLines="1">
+                            <!--android:hint="Inserire nome" -->
+                        </com.google.android.material.textfield.TextInputEditText>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:id="@+id/textInputLayoutCF"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:hint="Codice Fiscale"
+                        android:layout_marginLeft="5dp"
+                        app:boxStrokeErrorColor="@color/red"
+                        app:errorTextColor="@color/red"
+                        app:errorIconTint="@color/red"
+                        app:startIconDrawable="@drawable/baseline_credit_card_24"
+                        app:endIconMode="clear_text"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_weight="1">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/textInputEditTextCF"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            android:maxLines="1">
+                        </com.google.android.material.textfield.TextInputEditText>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/datacodice"
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/cellemail">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:id="@+id/textInputLayoutNumero"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Cellulare"
+                        android:layout_marginRight="5dp"
+                        app:boxStrokeErrorColor="@color/red"
+                        app:errorTextColor="@color/red"
+                        app:errorIconTint="@color/red"
+                        app:startIconDrawable="@drawable/baseline_local_phone_24"
+                        app:endIconMode="clear_text"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_weight="1">
+                        <!--app:expandedHintEnabled="false"-->
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/textInputEditTextNumero"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            android:maxLines="1">
+                            <!--android:hint="Inserire nome" -->
+                        </com.google.android.material.textfield.TextInputEditText>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:id="@+id/textInputLayoutEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:hint="Email"
+                        android:layout_marginLeft="5dp"
+                        app:boxStrokeErrorColor="@color/red"
+                        app:errorTextColor="@color/red"
+                        app:errorIconTint="@color/red"
+                        app:startIconDrawable="@drawable/baseline_email_24"
+                        app:endIconMode="clear_text"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_weight="1">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/textInputEditTextEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            android:maxLines="1">
+                        </com.google.android.material.textfield.TextInputEditText>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Posti per i tuoi voli"
+                    android:textColor="@color/turchese"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:id="@+id/posti"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@+id/cellemail"/>
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/baseline_airline_seat_recline_extra_24"
+                    android:layout_below="@id/posti"
+                    android:layout_marginTop="15dp"
+                    android:id="@+id/posto"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Andata:"
+                    android:textColor="@color/border_grey"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="20dp"
+                    android:id="@+id/posto_andata"
+                    android:layout_below="@+id/posti"
+                    android:layout_toRightOf="@+id/posto"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" 1A (Finestrino) "
+                    android:textColor="@color/turchese"
+                    android:layout_marginTop="10dp"
+                    android:textSize="20dp"
+                    android:id="@+id/numero_posto_andata"
+                    android:layout_below="@+id/posti"
+                    android:layout_toRightOf="@+id/posto_andata"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" Modifica"
+                    android:layout_marginTop="12dp"
+                    android:textColor="@color/turchese_scuro"
+                    android:textSize="18dp"
+                    android:id="@+id/modifica"
+                    android:layout_below="@+id/posti"
+                    android:layout_toRightOf="@+id/numero_posto_andata"/>
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/baseline_mode_24"
+                    android:layout_toRightOf="@id/modifica"
+                    android:layout_below="@+id/posti"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="4dp"
+                    android:onClick="ClickPosti"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ritorno:"
+                    android:textColor="@color/border_grey"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="20dp"
+                    android:id="@+id/posto_ritorno"
+                    android:layout_below="@+id/posto_andata"
+                    android:layout_toRightOf="@+id/posto"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" 9B (Corridoio) "
+                    android:textColor="@color/turchese"
+                    android:textSize="20dp"
+                    android:id="@+id/numero_posto_ritorno"
+                    android:layout_below="@+id/posto_andata"
+                    android:layout_toRightOf="@+id/posto_andata"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" Modifica"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginLeft="7dp"
+                    android:textColor="@color/turchese_scuro"
+                    android:textSize="18dp"
+                    android:id="@+id/modifica2"
+                    android:layout_below="@+id/posto_andata"
+                    android:layout_toRightOf="@+id/numero_posto_ritorno"/>
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/baseline_mode_24"
+                    android:layout_toRightOf="@id/modifica2"
+                    android:layout_below="@+id/posto_andata"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="4dp"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <!--<RelativeLayout
+        android:id="@+id/footer"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:background="@color/back_grey"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/prezzo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="35€"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/turchese" />
+
+        <Button
+            android:layout_width="230dp"
+            android:layout_height="67dp"
+            android:layout_marginTop="15dp"
+            android:text="prenota"
+            android:gravity="center"
+            android:textSize="17dp"
+            android:id="@+id/ButtonPrenota"
+            android:backgroundTint="@color/turchese"
+            android:layout_toRightOf="@+id/prezzo"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="120dp"/>
+
+    </RelativeLayout>-->
+
+</RelativeLayout>

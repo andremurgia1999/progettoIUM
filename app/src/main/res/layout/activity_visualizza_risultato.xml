@@ -609,7 +609,8 @@
             android:backgroundTint="@color/turchese"
             android:layout_toRightOf="@+id/prezzo"
             android:layout_marginRight="30dp"
-            android:layout_marginLeft="120dp"/>
+            android:layout_marginLeft="120dp"
+            android:onClick="ClickPrenota"/>
 
     </RelativeLayout>
 

@@ -3,6 +3,8 @@ package com.example.progettoium;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ScrollView;
@@ -34,5 +36,18 @@ public class VisualizzaRisultatoActivity extends AppCompatActivity {
                 scroll.fullScroll(ScrollView.FOCUS_UP);
             }
         });
+    }
+
+    public void ClickPrenota(View view){
+        redirectActivity(this, PrenotazioneActivity.class);
+    }
+
+    public void ClickBack(View view){
+        finish();
+    }
+
+    private void redirectActivity(Activity old_activity, Class new_activity) {
+        Intent intent = new Intent(old_activity, new_activity);
+        old_activity.startActivity(intent);
     }
 }
