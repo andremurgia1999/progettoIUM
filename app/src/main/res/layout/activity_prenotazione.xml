@@ -19,6 +19,17 @@
 
             <include layout="@layout/prenotazione_toolbar"/>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ANDATA e RITORNO"
+                android:textColor="@color/turchese"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:layout_gravity="center"/>
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -32,8 +43,8 @@
                 android:orientation = "vertical"
                 android:background="@drawable/border_turchese"
                 android:layout_marginTop="10dp"
-
-                android:id="@+id/imm">
+                android:id="@+id/imm"
+                android:layout_centerHorizontal="true">
 
                 <ImageView
                     android:id="@+id/logo_compagnia"
@@ -49,12 +60,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ANDATA e RITORNO"
-                    android:textColor="@color/turchese"
+                    android:text=""
+                    android:textColor="@color/white"
                     android:textSize="20dp"
                     android:textStyle="bold"
                     android:id="@+id/andata"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="-20dp"
                     android:layout_below="@+id/imm"/>
 
                 <ImageView
@@ -158,6 +169,7 @@
                     android:id="@+id/pass"
                     android:layout_below="@+id/da"
                     android:layout_toRightOf="@id/data2"/>
+
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -422,7 +434,8 @@
                     android:textSize="18dp"
                     android:id="@+id/modifica"
                     android:layout_below="@+id/posti"
-                    android:layout_toRightOf="@+id/numero_posto_andata"/>
+                    android:layout_toRightOf="@+id/numero_posto_andata"
+                    android:onClick="ClickPosti"/>
 
                 <ImageView
                     android:layout_width="18dp"
@@ -476,16 +489,355 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginLeft="4dp"/>
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Selezione bagagli"
+                    android:textColor="@color/turchese"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:id="@+id/bagagli"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@+id/modifica2"/>
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/baseline_luggage_24"
+                    android:layout_below="@id/bagagli"
+                    android:layout_marginTop="15dp"
+                    android:id="@+id/bagaglio"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bagaglio selezionato:"
+                    android:textColor="@color/border_grey"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="20dp"
+                    android:id="@+id/selezione"
+                    android:layout_below="@+id/bagagli"
+                    android:layout_toRightOf="@+id/posto"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bagaglio a mano "
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/turchese"
+                    android:textSize="20dp"
+                    android:id="@+id/selezionato"
+                    android:layout_below="@+id/selezione"
+                    android:layout_toRightOf="@id/posto"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation = "vertical"
+                    android:background="@drawable/border"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/selezionato"
+                    android:id="@+id/bag2">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="25dp"
+                            android:layout_marginLeft="10dp"
+                            android:id="@+id/radio3"
+                            android:checked="true"/>
+
+                        <TextView
+                            android:layout_width="240dp"
+                            android:layout_height="wrap_content"
+                            android:text="1 Bagaglio a mano, con misure 55x40x20cm"
+                            android:textColor="@color/turchese"
+                            android:layout_marginTop="10dp"
+                            android:textSize="20dp"
+                            android:id="@+id/tipo3"
+                            android:layout_toRightOf="@+id/radio3"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Gratis"
+                            android:textColor="@color/border_grey"
+                            android:textSize="20dp"
+                            android:layout_toRightOf="@+id/radio3"
+                            android:layout_below="@+id/tipo3"/>
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/bagaglio3"
+                            android:layout_marginLeft="0dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_toRightOf="@+id/tipo3"/>
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation = "vertical"
+                    android:background="@drawable/border"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@id/bag2"
+                    android:id="@+id/bag1">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="25dp"
+                            android:layout_marginLeft="10dp"
+                            android:id="@+id/radio1"/>
+
+                        <TextView
+                            android:layout_width="240dp"
+                            android:layout_height="wrap_content"
+                            android:text="1 Bagaglio da 10kg e 1 borsa piccola"
+                            android:textColor="@color/turchese"
+                            android:layout_marginTop="10dp"
+                            android:textSize="20dp"
+                            android:id="@+id/tipo"
+                            android:layout_toRightOf="@+id/radio1"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+ 34,00€"
+                            android:textColor="@color/border_grey"
+                            android:textSize="20dp"
+                            android:layout_toRightOf="@+id/radio1"
+                            android:layout_below="@+id/tipo"/>
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/bagaglio"
+                            android:layout_marginLeft="0dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_toRightOf="@+id/tipo"/>
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation = "vertical"
+                    android:background="@drawable/border"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@id/bag1"
+                    android:id="@+id/bag4">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="25dp"
+                            android:layout_marginLeft="10dp"
+                            android:id="@+id/radio2"/>
+
+                        <TextView
+                            android:layout_width="240dp"
+                            android:layout_height="wrap_content"
+                            android:text="1 Bagaglio imbarcato da 30kg"
+                            android:textColor="@color/turchese"
+                            android:layout_marginTop="10dp"
+                            android:textSize="20dp"
+                            android:id="@+id/tipo2"
+                            android:layout_toRightOf="@+id/radio2"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+ 78,00€"
+                            android:textColor="@color/border_grey"
+                            android:textSize="20dp"
+                            android:layout_toRightOf="@+id/radio2"
+                            android:layout_below="@+id/tipo2"/>
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/bagaglio2"
+                            android:layout_marginLeft="0dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_toRightOf="@+id/tipo2"/>
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dati di pagamento"
+                    android:textColor="@color/turchese"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:id="@+id/pagamento"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@+id/bag4"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:id="@+id/textInputLayoutNomeCognome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nome e Cognome"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    app:boxStrokeErrorColor="@color/red"
+                    app:errorTextColor="@color/red"
+                    app:errorIconTint="@color/red"
+                    app:startIconDrawable="@drawable/baseline_person_outline_24"
+                    app:endIconMode="clear_text"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_below="@id/pagamento">
+                    <!--app:expandedHintEnabled="false"-->
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textInputEditTextNomeCognome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:maxLines="1">
+                        <!--android:hint="Inserire nome" -->
+                    </com.google.android.material.textfield.TextInputEditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:id="@+id/textInputLayoutNumeroCarta"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Numero della carta"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    app:boxStrokeErrorColor="@color/red"
+                    app:errorTextColor="@color/red"
+                    app:errorIconTint="@color/red"
+                    app:startIconDrawable="@drawable/baseline_add_card_24"
+                    app:endIconMode="clear_text"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_below="@id/textInputLayoutNomeCognome">
+                    <!--app:expandedHintEnabled="false"-->
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textInputEditTextNumeroCarta"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:maxLines="1">
+                        <!--android:hint="Inserire nome" -->
+                    </com.google.android.material.textfield.TextInputEditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/textInputLayoutNumeroCarta"
+                    android:id="@+id/scadCVV"
+                    android:layout_marginTop="5dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:id="@+id/textInputLayoutScad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Scadenza"
+                        android:layout_marginRight="5dp"
+                        app:boxStrokeErrorColor="@color/red"
+                        app:errorTextColor="@color/red"
+                        app:errorIconTint="@color/red"
+                        app:startIconDrawable="@drawable/baseline_access_time_24"
+                        app:endIconMode="clear_text"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_weight="1">
+                        <!--app:expandedHintEnabled="false"-->
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/textInputEditTextScad"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:maxLength="5"
+                            android:inputType="phone"
+                            android:maxLines="1">
+                            <!--android:hint="Inserire nome" -->
+                        </com.google.android.material.textfield.TextInputEditText>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:id="@+id/textInputLayoutCVV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        app:counterMaxLength="3"
+                        android:maxLines="1"
+                        android:hint="CVV"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        app:boxStrokeErrorColor="@color/red"
+                        app:errorTextColor="@color/red"
+                        app:errorIconTint="@color/red"
+                        app:startIconDrawable="@drawable/cvv"
+                        app:endIconMode="clear_text"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_weight="1">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/textInputEditTextCVV"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:maxLength="3">
+                        </com.google.android.material.textfield.TextInputEditText>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:src="@drawable/carte"
+                    android:layout_below="@id/scadCVV"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="110dp"/>
             </RelativeLayout>
 
         </LinearLayout>
     </ScrollView>
 
 
-    <!--<RelativeLayout
+    <RelativeLayout
         android:id="@+id/footer"
         android:layout_width="fill_parent"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
         android:background="@color/back_grey"
         android:layout_alignParentBottom="true">
 
@@ -493,26 +845,26 @@
             android:id="@+id/prezzo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="35€"
+            android:text="€ 35.00"
             android:textSize="25dp"
             android:textStyle="bold"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="22dp"
             android:layout_marginLeft="30dp"
             android:textColor="@color/turchese" />
 
         <Button
-            android:layout_width="230dp"
+            android:layout_width="300dp"
             android:layout_height="67dp"
-            android:layout_marginTop="15dp"
-            android:text="prenota"
+            android:layout_marginTop="7dp"
+            android:text="paga e prenota"
             android:gravity="center"
             android:textSize="17dp"
             android:id="@+id/ButtonPrenota"
+            android:onClick="ClickPaga"
             android:backgroundTint="@color/turchese"
             android:layout_toRightOf="@+id/prezzo"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="120dp"/>
-
-    </RelativeLayout>-->
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="90dp"/>
+    </RelativeLayout>
 
 </RelativeLayout>

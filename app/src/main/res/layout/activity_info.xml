@@ -19,7 +19,7 @@
 
             <include layout="@layout/risultato_toolbar"/>
 
-            <RelativeLayout
+           <RelativeLayout
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -89,7 +89,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Roma (ROM) "
+                    android:text="Parigi (PAR) "
                     android:textColor="@color/turchese"
                     android:layout_marginTop="10dp"
                     android:textSize="24dp"
@@ -119,10 +119,9 @@
                         android:layout_width="90dp"
                         android:layout_height="90dp"
                         android:layout_gravity="center"
-                        app:srcCompat="@drawable/ryanair"
+                        app:srcCompat="@drawable/airfrance"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginTop="10dp"/>
+                        android:layout_marginRight="10dp"/>
                 </LinearLayout>
 
                 <TextView
@@ -138,7 +137,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="RYANAIR"
+                    android:text="AIRFRANCE"
                     android:textColor="@color/turchese"
                     android:textSize="20dp"
                     android:textStyle="bold"
@@ -159,7 +158,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="25/07/2023"
+                    android:text="06/06/2023"
                     android:textColor="@color/turchese"
                     android:textSize="20dp"
                     android:id="@+id/data"
@@ -178,36 +177,40 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1h 5m"
+                    android:text="2h 20m"
                     android:textColor="@color/turchese"
                     android:textSize="20dp"
                     android:id="@+id/dur"
                     android:layout_below="@+id/il"
                     android:layout_toRightOf="@+id/durata"/>
 
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/ora2"
+                    android:layout_below="@id/durata">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Ora di partenza: "
+                    android:text="Partenza: "
                     android:textColor="@color/border_grey"
                     android:textSize="20dp"
-                    android:id="@+id/orario"
-                    android:layout_below="@id/durata"/>
+                    android:id="@+id/orario"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="09:30"
+                    android:text="10:00"
                     android:textColor="@color/turchese"
                     android:textSize="20dp"
                     android:id="@+id/ora"
                     android:layout_below="@+id/durata"
                     android:layout_toRightOf="@+id/orario"/>
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Ora di arrivo: "
+                    android:text="      Arrivo: "
                     android:textColor="@color/border_grey"
                     android:textSize="20dp"
                     android:id="@+id/orario2"
@@ -216,12 +219,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="10:35"
+                    android:text="12:20"
                     android:textColor="@color/turchese"
                     android:textSize="20dp"
-                    android:id="@+id/ora2"
                     android:layout_below="@+id/orario"
                     android:layout_toRightOf="@+id/orario2"/>
+
+                </LinearLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -245,7 +249,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Passeggeri: "
+                    android:text="Passeggero: "
                     android:textColor="@color/border_grey"
                     android:textSize="20dp"
                     android:id="@+id/passeggeri"
@@ -254,44 +258,82 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1 passeggero ADULTO"
+                    android:text="Interazione Uomo-Macchina"
                     android:textColor="@color/turchese"
                     android:textSize="20dp"
                     android:id="@+id/adulto"
                     android:layout_below="@+id/numero"
                     android:layout_toRightOf="@+id/passeggeri"/>
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Posto: "
+                    android:textColor="@color/border_grey"
+                    android:textSize="20dp"
+                    android:id="@+id/posto"
+                    android:layout_below="@id/passeggeri"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4B (Corridoio)"
+                    android:textColor="@color/turchese"
+                    android:textSize="20dp"
+                    android:id="@+id/posti"
+                    android:layout_below="@+id/passeggeri"
+                    android:layout_toRightOf="@+id/posto"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bagaglio: "
+                    android:textColor="@color/border_grey"
+                    android:textSize="20dp"
+                    android:id="@+id/bagaglio"
+                    android:layout_below="@id/posto"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Imbarcato da 30kg"
+                    android:textColor="@color/turchese"
+                    android:textSize="20dp"
+                    android:id="@+id/bagagli"
+                    android:layout_below="@+id/posto"
+                    android:layout_toRightOf="@+id/bagaglio"/>
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="130dp"
                     android:layout_height="50dp"
                     android:layout_below="@id/passeggeri"
                     android:layout_marginLeft="230dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="60dp"
                     app:cardCornerRadius="20dp"
                     android:elevation="20dp"
                     android:id="@+id/ritorno"
                     android:layout_marginBottom="20dp">
 
-                        <RelativeLayout
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:text="RITORNO"
+                            android:textSize="16dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginLeft="18dp"
+                            android:id="@+id/testo"/>
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="RITORNO"
-                                android:textSize="16dp"
-                                android:layout_marginTop="15dp"
-                                android:layout_marginLeft="18dp"
-                                android:id="@+id/testo"/>
-
-                            <ImageView
-                                android:layout_width="25dp"
-                                android:layout_height="25dp"
-                                android:src="@drawable/down"
-                                android:layout_toRightOf="@id/testo"
-                                android:layout_marginTop="14dp"
-                                android:layout_marginLeft="5dp"/>
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/down"
+                            android:layout_toRightOf="@id/testo"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginLeft="5dp"/>
 
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
@@ -346,7 +388,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Roma (ROM) "
+                    android:text="Parigi (PAR) "
                     android:textColor="@color/turchese"
                     android:layout_marginTop="10dp"
                     android:textSize="24dp"
@@ -398,7 +440,7 @@
                         android:layout_width="90dp"
                         android:layout_height="90dp"
                         android:layout_gravity="center"
-                        app:srcCompat="@drawable/ryanair"
+                        app:srcCompat="@drawable/airfrance"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginTop="10dp"/>
@@ -417,7 +459,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="RYANAIR"
+                    android:text="AIRFRANCE"
                     android:textColor="@color/turchese"
                     android:textSize="20dp"
                     android:textStyle="bold"
@@ -438,7 +480,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="30/07/2023"
+                    android:text="25/06/2023"
                     android:textColor="@color/turchese"
                     android:textSize="20dp"
                     android:id="@+id/data2"
@@ -457,50 +499,55 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1h 5m"
+                    android:text="2h 20m"
                     android:textColor="@color/turchese"
                     android:textSize="20dp"
                     android:id="@+id/dur2"
                     android:layout_below="@+id/il2"
                     android:layout_toRightOf="@+id/durata2"/>
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Ora di partenza: "
-                    android:textColor="@color/border_grey"
-                    android:textSize="20dp"
-                    android:id="@+id/orario3"
-                    android:layout_below="@id/durata2"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="22:40"
-                    android:textColor="@color/turchese"
-                    android:textSize="20dp"
-                    android:id="@+id/ora3"
-                    android:layout_below="@+id/durata2"
-                    android:layout_toRightOf="@+id/orario3"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Ora di arrivo: "
-                    android:textColor="@color/border_grey"
-                    android:textSize="20dp"
-                    android:id="@+id/orario4"
-                    android:layout_below="@id/orario3"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="23:45"
-                    android:textColor="@color/turchese"
-                    android:textSize="20dp"
+                    android:orientation="horizontal"
                     android:id="@+id/ora4"
-                    android:layout_below="@+id/orario3"
-                    android:layout_toRightOf="@+id/orario4"/>
+                    android:layout_below="@id/dur2">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Partenza: "
+                        android:textColor="@color/border_grey"
+                        android:textSize="20dp"
+                        android:id="@+id/orario3"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20:30"
+                        android:textColor="@color/turchese"
+                        android:textSize="20dp"
+                        android:id="@+id/ora3"
+                        android:layout_below="@+id/dur2"
+                        android:layout_toRightOf="@+id/orario3"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="      Arrivo: "
+                        android:textColor="@color/border_grey"
+                        android:textSize="20dp"
+                        android:id="@+id/orario4"
+                        android:layout_below="@id/orario3"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="22:50"
+                        android:textColor="@color/turchese"
+                        android:textSize="20dp"
+                        android:layout_below="@+id/orario3"
+                        android:layout_toRightOf="@+id/orario4"/>
+
+                </LinearLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -524,7 +571,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Passeggeri: "
+                    android:text="Passeggero: "
                     android:textColor="@color/border_grey"
                     android:textSize="20dp"
                     android:id="@+id/passeggeri2"
@@ -533,23 +580,61 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1 passeggero ADULTO"
+                    android:text="Interazione Uomo-Macchina"
                     android:textColor="@color/turchese"
                     android:textSize="20dp"
                     android:id="@+id/adulto2"
                     android:layout_below="@+id/numero2"
                     android:layout_toRightOf="@+id/passeggeri2"/>
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Posto: "
+                    android:textColor="@color/border_grey"
+                    android:textSize="20dp"
+                    android:id="@+id/posto2"
+                    android:layout_below="@id/passeggeri2"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="17C (Corridoio)"
+                    android:textColor="@color/turchese"
+                    android:textSize="20dp"
+                    android:id="@+id/posti2"
+                    android:layout_below="@+id/passeggeri2"
+                    android:layout_toRightOf="@+id/posto2"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bagaglio: "
+                    android:textColor="@color/border_grey"
+                    android:textSize="20dp"
+                    android:id="@+id/bagaglio2"
+                    android:layout_below="@id/posto2"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Imbarcato da 30kg"
+                    android:textColor="@color/turchese"
+                    android:textSize="20dp"
+                    android:id="@+id/bagagli2"
+                    android:layout_below="@+id/posto2"
+                    android:layout_toRightOf="@+id/bagaglio2"/>
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="130dp"
                     android:layout_height="50dp"
                     android:layout_below="@id/passeggeri2"
                     android:layout_marginLeft="230dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="70dp"
                     app:cardCornerRadius="20dp"
                     android:elevation="20dp"
                     android:id="@+id/andata"
-                    android:layout_marginBottom="130dp">
+                    android:layout_marginBottom="100dp">
 
                     <RelativeLayout
                         android:layout_width="wrap_content"
@@ -587,30 +672,17 @@
         android:background="@color/back_grey"
         android:layout_alignParentBottom="true">
 
-        <TextView
-            android:id="@+id/prezzo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="€ 35.00"
-            android:textSize="25dp"
-            android:textStyle="bold"
-            android:layout_marginTop="22dp"
-            android:layout_marginLeft="30dp"
-            android:textColor="@color/turchese" />
-
         <Button
             android:layout_width="300dp"
             android:layout_height="67dp"
             android:layout_marginTop="7dp"
-            android:text="prenota"
+            android:text="disdici prenotazione"
             android:gravity="center"
             android:textSize="17dp"
-            android:id="@+id/ButtonPrenota"
+            android:id="@+id/ButtonDisdici"
             android:backgroundTint="@color/turchese"
-            android:layout_toRightOf="@+id/prezzo"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="90dp"
-            android:onClick="ClickPrenota"/>
+            android:layout_centerHorizontal="true"
+            android:onClick="ClickDisdici"/>
     </RelativeLayout>
 
 </RelativeLayout>

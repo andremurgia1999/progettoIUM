@@ -502,6 +502,11 @@ public class MainActivity extends AppCompatActivity {
         redirectActivity(this, ModificaActivity.class);
     }
 
+    public void ClickPrenotazioni(View view){
+        closeDrawer2(drawerLayout);
+        redirectActivity(this, MiePrenotazioni.class);
+    }
+
     public void ClickLogout(View view){
         closeDrawer2(drawerLayout);
         isLogout();
@@ -517,7 +522,7 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(context, "Login effettuato, Benvenuto IUM2023", Toast.LENGTH_LONG).show();
         Login.setVisibility(View.GONE);
         Registrati.setVisibility(View.GONE);
-        IlMioAccount.setVisibility(View.VISIBLE);
+        //IlMioAccount.setVisibility(View.VISIBLE);
         LeMiePrenotazioni.setVisibility(View.VISIBLE);
         IMieiViaggi.setVisibility(View.VISIBLE);
         Modifica.setVisibility(View.VISIBLE);
@@ -528,7 +533,7 @@ public class MainActivity extends AppCompatActivity {
         div2.setVisibility(View.VISIBLE);
         div3.setVisibility(View.VISIBLE);
         div4.setVisibility(View.VISIBLE);
-        div5.setVisibility(View.VISIBLE);
+        //div5.setVisibility(View.VISIBLE);
         div6.setVisibility(View.VISIBLE);
         div7.setVisibility(View.GONE);
         div8.setVisibility(View.GONE);

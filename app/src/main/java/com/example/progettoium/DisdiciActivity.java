@@ -6,25 +6,27 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
-public class PrenotazioneActivity extends AppCompatActivity {
+public class DisdiciActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_prenotazione);
-    }
-
-    public void ClickPosti(View view){
-        redirectActivity(this, PostiActivity.class);
-    }
-
-    public void ClickPaga(View view){
-        redirectActivity(this, ConfermaActivity.class);
+        setContentView(R.layout.activity_disdici);
     }
 
     public void ClickBack(View view){
         finish();
+    }
+
+    public void ClickAnnulla(View view){
+        finish();
+    }
+
+    public void ClickDisdetta(View view){
+        redirectActivity(this,MiePrenotazioni.class);
+        Toast.makeText(getApplicationContext(), "La sua prenotazione è stata cancellata, la ringraziamo.", Toast.LENGTH_LONG).show();
     }
 
     private void redirectActivity(Activity old_activity, Class new_activity) {

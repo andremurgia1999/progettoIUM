@@ -7,20 +7,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class PrenotazioneActivity extends AppCompatActivity {
+public class MiePrenotazioni extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_prenotazione);
+        setContentView(R.layout.activity_mie_prenotazioni);
     }
 
-    public void ClickPosti(View view){
-        redirectActivity(this, PostiActivity.class);
-    }
-
-    public void ClickPaga(View view){
-        redirectActivity(this, ConfermaActivity.class);
+    public void ClickInfo(View view){
+        redirectActivity(this, InfoActivity.class);
     }
 
     public void ClickBack(View view){

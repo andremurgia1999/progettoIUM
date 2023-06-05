@@ -1,0 +1,587 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation = "vertical">
+
+        <include layout="@layout/le_mie_prenotazioni_toolbar"/>
+
+        <ImageView
+            android:id="@+id/Logo"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:srcCompat="@drawable/logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Le tue prenotazioni"
+            android:layout_gravity="center"
+            android:textColor="@color/turchese"
+            android:textSize="25dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:textColor="@color/border_grey"
+                android:text="da"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:textColor="@color/turchese"
+                android:text=" Cagliari(CAG)"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:textColor="@color/border_grey"
+                android:text=" a"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:textColor="@color/turchese"
+                android:text=" Parigi(PAR)"
+                android:layout_marginTop="20dp"/>
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="5dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="20dp"
+            android:outlineAmbientShadowColor="@color/turchese"
+            android:outlineSpotShadowColor="@color/turchese"
+            android:onClick="ClickInfo">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:text="16/06/2023"
+                    android:layout_marginLeft="175dp"
+                    android:layout_marginTop="10dp"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/airfrance"
+                        android:id="@+id/comp_partenza77"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="CAG"
+                        android:layout_alignParentTop="@id/decollo77"
+                        android:layout_marginLeft="115dp"
+                        android:layout_marginTop="2dp"
+                        android:id="@+id/aeroporto77"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="PAR"
+                        android:layout_alignParentTop="@id/decollo77"
+                        android:layout_marginLeft="275dp"
+                        android:layout_marginTop="2dp"
+                        android:id="@+id/aeroporto88"/>
+
+                    <LinearLayout
+                        android:layout_width="200dp"
+                        android:layout_height="1dp"
+                        android:background="@color/border_grey"
+                        android:id="@+id/linea77"
+                        android:layout_toRightOf="@id/comp_partenza77"
+                        android:layout_below="@id/decollo77"
+                        android:layout_marginLeft="35dp"
+                        android:layout_marginTop="-7dp"
+                        android:orientation="horizontal"/>
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_toRightOf="@id/comp_partenza77"
+                        android:layout_marginLeft="110dp"
+                        android:layout_marginTop="-30dp"
+                        android:layout_below="@+id/aeroporto77"
+                        android:src="@drawable/decollo"
+                        android:id="@+id/decollo77"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="10:00"
+                        android:layout_below="@id/linea77"
+                        android:layout_marginLeft="115dp"
+                        android:layout_marginTop="2dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="12:20"
+                        android:layout_below="@id/linea77"
+                        android:layout_marginLeft="272dp"
+                        android:layout_marginTop="2dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:textColor="@color/turchese"
+                        android:text="Diretto"
+                        android:layout_below="@id/linea77"
+                        android:layout_marginLeft="189dp"
+                        android:layout_marginTop="2dp"
+                        android:id="@+id/diretto77"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:textColor="@color/turchese"
+                        android:text="2h 20m"
+                        android:layout_below="@id/diretto77"
+                        android:layout_marginLeft="190dp"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:text="25/06/2023"
+                    android:layout_marginLeft="175dp"
+                    android:layout_marginTop="10dp"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/airfrance"
+                        android:id="@+id/comp_partenza99"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="PAR"
+                        android:layout_alignParentTop="@id/decollo99"
+                        android:layout_marginLeft="115dp"
+                        android:layout_marginTop="2dp"
+                        android:id="@+id/aeroporto99"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="CAG"
+                        android:layout_alignParentTop="@id/decollo99"
+                        android:layout_marginLeft="275dp"
+                        android:layout_marginTop="2dp"
+                        android:id="@+id/aeroporto43"/>
+
+                    <LinearLayout
+                        android:layout_width="200dp"
+                        android:layout_height="1dp"
+                        android:background="@color/border_grey"
+                        android:id="@+id/linea99"
+                        android:layout_toRightOf="@id/comp_partenza99"
+                        android:layout_below="@id/decollo99"
+                        android:layout_marginLeft="35dp"
+                        android:layout_marginTop="-7dp"
+                        android:orientation="horizontal"/>
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_toRightOf="@id/comp_partenza99"
+                        android:layout_marginLeft="110dp"
+                        android:layout_marginTop="-30dp"
+                        android:layout_below="@+id/aeroporto99"
+                        android:src="@drawable/atterragio"
+                        android:id="@+id/decollo99"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="20:30"
+                        android:layout_below="@id/linea99"
+                        android:layout_marginLeft="115dp"
+                        android:layout_marginTop="2dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="22:50"
+                        android:layout_below="@id/linea99"
+                        android:layout_marginLeft="272dp"
+                        android:layout_marginTop="2dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:textColor="@color/turchese"
+                        android:text="Diretto"
+                        android:layout_below="@id/linea99"
+                        android:layout_marginLeft="189dp"
+                        android:layout_marginTop="2dp"
+                        android:id="@+id/diretto99"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:textColor="@color/turchese"
+                        android:text="2h 20m"
+                        android:layout_below="@id/diretto99"
+                        android:layout_marginLeft="189dp"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/turchese"
+                    android:text="   "
+                    android:layout_marginLeft="317dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="-50dp"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="-15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:textColor="@color/border_grey"
+                android:text="da"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:textColor="@color/turchese"
+                android:text=" Cagliari(CAG)"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:textColor="@color/border_grey"
+                android:text=" a"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:textColor="@color/turchese"
+                android:text=" Barcellona(BAR)"
+                android:layout_marginTop="20dp"/>
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="5dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="20dp"
+            android:outlineAmbientShadowColor="@color/turchese"
+            android:outlineSpotShadowColor="@color/turchese">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:text="01/09/2023"
+                    android:layout_marginLeft="175dp"
+                    android:layout_marginTop="10dp"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/alitalia"
+                        android:id="@+id/comp_partenza1"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="CAG"
+                        android:layout_alignParentTop="@id/decollo1"
+                        android:layout_marginLeft="115dp"
+                        android:layout_marginTop="2dp"
+                        android:id="@+id/aeroporto1"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="BAR"
+                        android:layout_alignParentTop="@id/decollo1"
+                        android:layout_marginLeft="275dp"
+                        android:layout_marginTop="2dp"
+                        android:id="@+id/aeroporto2"/>
+
+                    <LinearLayout
+                        android:layout_width="200dp"
+                        android:layout_height="1dp"
+                        android:background="@color/border_grey"
+                        android:id="@+id/linea1"
+                        android:layout_toRightOf="@id/comp_partenza1"
+                        android:layout_below="@id/decollo1"
+                        android:layout_marginLeft="35dp"
+                        android:layout_marginTop="-7dp"
+                        android:orientation="horizontal"/>
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_toRightOf="@id/comp_partenza1"
+                        android:layout_marginLeft="110dp"
+                        android:layout_marginTop="-30dp"
+                        android:layout_below="@+id/aeroporto1"
+                        android:src="@drawable/decollo"
+                        android:id="@+id/decollo1"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="18:00"
+                        android:layout_below="@id/linea1"
+                        android:layout_marginLeft="115dp"
+                        android:layout_marginTop="2dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="19:30"
+                        android:layout_below="@id/linea1"
+                        android:layout_marginLeft="272dp"
+                        android:layout_marginTop="2dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:textColor="@color/turchese"
+                        android:text="Diretto"
+                        android:layout_below="@id/linea1"
+                        android:layout_marginLeft="189dp"
+                        android:layout_marginTop="2dp"
+                        android:id="@+id/diretto1"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:textColor="@color/turchese"
+                        android:text="1h 30m"
+                        android:layout_below="@id/diretto1"
+                        android:layout_marginLeft="190dp"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:text="03/09/2023"
+                    android:layout_marginLeft="175dp"
+                    android:layout_marginTop="10dp"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/alitalia"
+                        android:id="@+id/comp_partenza3"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="BAR"
+                        android:layout_alignParentTop="@id/decollo3"
+                        android:layout_marginLeft="115dp"
+                        android:layout_marginTop="2dp"
+                        android:id="@+id/aeroporto3"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="CAG"
+                        android:layout_alignParentTop="@id/decollo3"
+                        android:layout_marginLeft="275dp"
+                        android:layout_marginTop="2dp"
+                        android:id="@+id/aeroporto4"/>
+
+                    <LinearLayout
+                        android:layout_width="200dp"
+                        android:layout_height="1dp"
+                        android:background="@color/border_grey"
+                        android:id="@+id/linea3"
+                        android:layout_toRightOf="@id/comp_partenza3"
+                        android:layout_below="@id/decollo3"
+                        android:layout_marginLeft="35dp"
+                        android:layout_marginTop="-7dp"
+                        android:orientation="horizontal"/>
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_toRightOf="@id/comp_partenza3"
+                        android:layout_marginLeft="110dp"
+                        android:layout_marginTop="-30dp"
+                        android:layout_below="@+id/aeroporto3"
+                        android:src="@drawable/atterragio"
+                        android:id="@+id/decollo3"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="20:30"
+                        android:layout_below="@id/linea3"
+                        android:layout_marginLeft="115dp"
+                        android:layout_marginTop="2dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="23:00"
+                        android:layout_below="@id/linea3"
+                        android:layout_marginLeft="272dp"
+                        android:layout_marginTop="2dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:textColor="@color/turchese"
+                        android:text="Diretto"
+                        android:layout_below="@id/linea3"
+                        android:layout_marginLeft="189dp"
+                        android:layout_marginTop="2dp"
+                        android:id="@+id/diretto3"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:textColor="@color/turchese"
+                        android:text="1h 30m"
+                        android:layout_below="@id/diretto3"
+                        android:layout_marginLeft="189dp"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/turchese"
+                    android:text="   "
+                    android:layout_marginLeft="317dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="-50dp"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>
