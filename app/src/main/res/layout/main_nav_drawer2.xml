@@ -189,7 +189,8 @@
         android:orientation="horizontal"
         android:layout_gravity="center_vertical"
         android:id="@+id/IMieiViaggi"
-        android:visibility="gone">
+        android:visibility="gone"
+        android:onClick="ClickViaggi">
 
         <TextView
             android:layout_width="0dp"

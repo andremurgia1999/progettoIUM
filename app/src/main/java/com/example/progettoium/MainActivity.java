@@ -507,6 +507,11 @@ public class MainActivity extends AppCompatActivity {
         redirectActivity(this, MiePrenotazioni.class);
     }
 
+
+    public void ClickViaggi(View view){
+        closeDrawer2(drawerLayout);
+        redirectActivity(this, ViaggiActivity.class);
+    }
     public void ClickLogout(View view){
         closeDrawer2(drawerLayout);
         isLogout();
