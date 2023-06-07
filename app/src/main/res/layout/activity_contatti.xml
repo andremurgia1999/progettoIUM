@@ -53,8 +53,8 @@
 
                     <ImageView
                         android:layout_marginTop="20dp"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
                         android:src="@drawable/outline_call_24"
                         android:layout_gravity="center"
                         android:id="@+id/contattaci"/>
@@ -67,24 +67,16 @@
                         android:textColor="@color/turchese"
                         android:gravity="center"
                         android:textStyle="bold"
-                        android:textSize="27dp"
+                        android:textSize="25dp"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"/>
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="20dp"/>
+
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Contatti"
-                        android:layout_marginTop="10dp"
-                        android:textColor="@color/turchese"
-                        android:textSize="30dp"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="10dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Via Ospedale 72, Cagliari, 09124\nium2023@gmail.com\n+39 3881745648"
+                        android:text="Via Ospedale 72, Cagliari, 09124\nium2023@gmail.com\n+39 3881745647"
                         android:textColor="@color/border_grey"
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="7dp"

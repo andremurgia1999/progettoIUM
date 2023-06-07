@@ -48,14 +48,16 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toTopOf="parent"
+                app:expandedHintEnabled="false">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/textInputEditTextPartenza"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
-                    android:maxLines="1">
+                    android:maxLines="1"
+                    android:hint="Inserire aeroporto di partenza">
 
                 </com.google.android.material.textfield.TextInputEditText>
             </com.google.android.material.textfield.TextInputLayout>
@@ -80,14 +82,16 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toTopOf="parent"
+                app:expandedHintEnabled="false">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/textInputEditTextArrivo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
-                    android:maxLines="1">
+                    android:maxLines="1"
+                    android:hint="Inserire aeroporto di arrivo">
 
                 </com.google.android.material.textfield.TextInputEditText>
             </com.google.android.material.textfield.TextInputLayout>
@@ -154,12 +158,15 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:expandedHintEnabled="false">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/textInputEditTextDataPartenza"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:hint="Data partenza">
 
                     </com.google.android.material.textfield.TextInputEditText>
                 </com.google.android.material.textfield.TextInputLayout>
@@ -173,7 +180,7 @@
                     android:layout_marginEnd="24dp"
                     android:layout_marginTop="12dp"
                     android:layout_weight="1"
-                    android:hint="Data di arrivo"
+                    android:hint="Data di ritorno"
                     app:boxStrokeErrorColor="@color/red"
                     app:errorTextColor="@color/red"
                     app:errorIconTint="@color/red"
@@ -181,12 +188,14 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:expandedHintEnabled="false">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/textInputEditTextDataArrivo"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:hint="Data ritorno">
 
                     </com.google.android.material.textfield.TextInputEditText>
                 </com.google.android.material.textfield.TextInputLayout>
@@ -210,12 +219,14 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toTopOf="parent"
+                app:expandedHintEnabled="false">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/textInputEditTextNumeroPasseggeri"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:hint="Selezione passeggeri">
 
                 </com.google.android.material.textfield.TextInputEditText>
             </com.google.android.material.textfield.TextInputLayout>

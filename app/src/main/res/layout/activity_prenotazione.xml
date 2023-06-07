@@ -10,7 +10,8 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/scroll">
+        android:id="@+id/scroll"
+        android:layout_gravity="bottom">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -206,15 +207,15 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        android:layout_weight="1">
-                        <!--app:expandedHintEnabled="false"-->
+                        android:layout_weight="1"
+                        app:expandedHintEnabled="false">
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/textInputEditTextNome"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="text"
-                            android:maxLines="1">
-                            <!--android:hint="Inserire nome" -->
+                            android:maxLines="1"
+                            android:hint="Inserire nome">
                         </com.google.android.material.textfield.TextInputEditText>
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -236,14 +237,15 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        android:layout_weight="1">
-
+                        android:layout_weight="1"
+                        app:expandedHintEnabled="false">
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/textInputEditTextCognome"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="text"
-                            android:maxLines="1">
+                            android:maxLines="1"
+                            android:hint="Inserire cognome">
                         </com.google.android.material.textfield.TextInputEditText>
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -273,15 +275,15 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        android:layout_weight="1">
-                        <!--app:expandedHintEnabled="false"-->
+                        android:layout_weight="1"
+                        app:expandedHintEnabled="false">
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/textInputEditTextData"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="text"
-                            android:maxLines="1">
-                            <!--android:hint="Inserire nome" -->
+                            android:maxLines="1"
+                            android:hint="Inserire data">
                         </com.google.android.material.textfield.TextInputEditText>
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -303,14 +305,16 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        app:expandedHintEnabled="false">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/textInputEditTextCF"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="text"
-                            android:maxLines="1">
+                            android:maxLines="1"
+                            android:hint="Inserire CF">
                         </com.google.android.material.textfield.TextInputEditText>
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -340,15 +344,15 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        android:layout_weight="1">
-                        <!--app:expandedHintEnabled="false"-->
+                        android:layout_weight="1"
+                        app:expandedHintEnabled="false">
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/textInputEditTextNumero"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="text"
-                            android:maxLines="1">
-                            <!--android:hint="Inserire nome" -->
+                            android:maxLines="1"
+                            android:hint="Inserire cellulare">
                         </com.google.android.material.textfield.TextInputEditText>
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -370,14 +374,16 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        app:expandedHintEnabled="false">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/textInputEditTextEmail"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="text"
-                            android:maxLines="1">
+                            android:maxLines="1"
+                            android:hint="Inserire email">
                         </com.google.android.material.textfield.TextInputEditText>
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -710,15 +716,15 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:layout_below="@id/pagamento">
-                    <!--app:expandedHintEnabled="false"-->
+                    android:layout_below="@id/pagamento"
+                    app:expandedHintEnabled="false">
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/textInputEditTextNomeCognome"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text"
-                        android:maxLines="1">
-                        <!--android:hint="Inserire nome" -->
+                        android:maxLines="1"
+                        android:hint="Inserire nome e cognome">
                     </com.google.android.material.textfield.TextInputEditText>
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -739,15 +745,15 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:layout_below="@id/textInputLayoutNomeCognome">
-                    <!--app:expandedHintEnabled="false"-->
+                    android:layout_below="@id/textInputLayoutNomeCognome"
+                    app:expandedHintEnabled="false">
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/textInputEditTextNumeroCarta"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text"
-                        android:maxLines="1">
-                        <!--android:hint="Inserire nome" -->
+                        android:maxLines="1"
+                        android:hint="Inserire numero carta">
                     </com.google.android.material.textfield.TextInputEditText>
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -775,16 +781,16 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        android:layout_weight="1">
-                        <!--app:expandedHintEnabled="false"-->
+                        android:layout_weight="1"
+                        app:expandedHintEnabled="false">
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/textInputEditTextScad"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:maxLength="5"
                             android:inputType="phone"
-                            android:maxLines="1">
-                            <!--android:hint="Inserire nome" -->
+                            android:maxLines="1"
+                            android:hint="MM/YY">
                         </com.google.android.material.textfield.TextInputEditText>
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -808,7 +814,8 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        app:expandedHintEnabled="false">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/textInputEditTextCVV"
@@ -816,7 +823,8 @@
                             android:layout_height="wrap_content"
                             android:inputType="text"
                             android:maxLines="1"
-                            android:maxLength="3">
+                            android:maxLength="3"
+                            android:hint="CVV">
                         </com.google.android.material.textfield.TextInputEditText>
                     </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>

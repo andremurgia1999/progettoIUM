@@ -31,14 +31,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:expandedHintEnabled="false">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textInputEditTextUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
-            android:maxLines="1">
+            android:maxLines="1"
+            android:hint="Inserire username">
 
         </com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
@@ -63,14 +65,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:expandedHintEnabled="false">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textInputEditTextPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:maxLines="1">
+            android:maxLines="1"
+            android:hint="Inserire password">
 
         </com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>

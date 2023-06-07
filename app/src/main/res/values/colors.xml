@@ -18,4 +18,7 @@
     <color name="blu">#0D02AA</color>
     <color name="back_grey">#E7E7E7</color>
     <color name="blu_scuro">#2B4879</color>
+    <color name="transparent">#3B837E7E</color>
+    <color name="transparent2">#6A000000</color>
+    <color name="transparent3">#2D000000</color>
 </resources>

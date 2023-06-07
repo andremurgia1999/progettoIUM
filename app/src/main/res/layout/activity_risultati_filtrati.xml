@@ -408,7 +408,8 @@
             app:cardCornerRadius="8dp"
             app:cardElevation="20dp"
             android:outlineAmbientShadowColor="@color/turchese"
-            android:outlineSpotShadowColor="@color/turchese">
+            android:outlineSpotShadowColor="@color/turchese"
+            android:onClick="ClickRyanair">
 
             <LinearLayout
                 android:layout_width="wrap_content"

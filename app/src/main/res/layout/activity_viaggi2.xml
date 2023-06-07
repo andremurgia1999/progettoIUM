@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include layout="@layout/carica_toolbar"/>
+
+    <ImageView
+        android:id="@+id/Logo"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Roma"
+        android:layout_gravity="center"
+        android:textColor="@color/turchese"
+        android:textSize="30dp"
+        android:layout_marginTop="-20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="08/04/2023 - 12/04/2023"
+        android:layout_gravity="center"
+        android:textColor="@color/turchese"
+        android:textSize="20dp"/>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPageAndroid"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/border"/>
+
+    <ImageView
+        android:id="@+id/slide1"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        app:srcCompat="@drawable/slide1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:visibility="visible"/>
+
+    <ImageView
+        android:id="@+id/slide2"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        app:srcCompat="@drawable/slide2"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:visibility="gone"/>
+    <ImageView
+        android:id="@+id/slide3"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        app:srcCompat="@drawable/slide3"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:visibility="gone"/>
+    <ImageView
+        android:id="@+id/slide4"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        app:srcCompat="@drawable/slide4"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:visibility="gone"/>
+    <ImageView
+        android:id="@+id/slide5"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        app:srcCompat="@drawable/slide5"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:visibility="gone"/>
+    <ImageView
+        android:id="@+id/slide6"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        app:srcCompat="@drawable/slide6"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:visibility="gone"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="5dp"
+        android:text="Aggiungi foto"
+        android:gravity="center"
+        android:id="@+id/ButtonAggiungi"
+        android:backgroundTint="@color/turchese"
+        android:onClick="ClickUpload"/>
+
+</LinearLayout>

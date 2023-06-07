@@ -277,6 +277,18 @@
 
             </androidx.cardview.widget.CardView>
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="67dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="Nuova recensione"
+                android:gravity="center"
+                android:id="@+id/ButtonAggiungi"
+                android:backgroundTint="@color/turchese"
+                android:onClick="ClickUpload"/>
+
         </LinearLayout>
     </ScrollView>
 
